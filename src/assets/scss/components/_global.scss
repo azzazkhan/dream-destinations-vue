@@ -1,0 +1,38 @@
+*,
+*::before,
+*::after {
+	@include prefix(box-sizing, border-box);
+	outline: none;
+}
+
+html,
+body {
+	color: map-get($colors, global_text);
+	background-color: map-get($colors, page_background);
+	overflow-x: hidden;
+	font-family: map-get($fonts, primary);
+	font-size: 14px;
+	line-height: 1.4;
+	min-height: 100vh;
+	margin: 0;
+	padding: 0;
+}
+
+// Style the anchors as normal text
+a,
+a:hover,
+a:active,
+a:visited,
+a:focus {
+	color: map-get($colors, global_text);
+	text-decoration: none;
+}
+
+// Remove list and list-item styles
+ol,
+ul,
+li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}

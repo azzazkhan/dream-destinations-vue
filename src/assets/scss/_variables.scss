@@ -1,0 +1,28 @@
+@import 'mixins';
+
+$colors: (
+	background: white,
+	faded: #f9f8f7,
+	primary: #245abc,
+	primary_dark: shade(#245abc, 50%),
+	base_text: #1e1e1e,
+);
+
+$fonts: (
+	primary: (
+		'Compass Sans',
+		sans-serif,
+	),
+	display: (
+		'Lobster',
+		cursive,
+	),
+	input: (
+		'Lato',
+		sans-serif,
+	),
+	heading: (
+		'Open Sans',
+		sans-serif,
+	),
+);

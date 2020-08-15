@@ -1,0 +1,28 @@
+.page-content {
+	background: white;
+	width: 90vw;
+	margin: 0 auto;
+	padding-top: 20px;
+	border-radius: 10px;
+	transform: translateY(-50px);
+	.notice-alert {
+		position: relative;
+		color: #303030;
+		width: 90%;
+		margin: 20px auto 40px;
+		padding: 15px 20px 15px 55px;
+		border: 1px solid #cccccd;
+		border-left: 4px solid map-get($colors, primary);
+		border-radius: 4px;
+		.icon {
+			position: absolute;
+			left: 20px;
+			top: 50%;
+			transform: translateY(-40%);
+			svg {
+				stroke: map-get($colors, primary);
+				stroke-width: 1.5px;
+			}
+		}
+	}
+}
