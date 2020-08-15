@@ -1,5 +1,5 @@
 <template>
-  <div class="app">
+  <div class="RootComponent">
     <!-- <router-link to="/about">About</router-link> -->
     <router-view />
   </div>

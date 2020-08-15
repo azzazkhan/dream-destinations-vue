@@ -1,5 +1,5 @@
 <template>
-  <header id="HeaderNavbarComponent">
+  <header class="HeaderNavbarComponent">
     <!-- This container will hold the logo image. Note that use of <img> tag is must even for SVGs -->
     <div class="logo-wrapper">
       <img src="./assets/img/logo.svg" alt />
@@ -141,7 +141,7 @@
 
 <script>
 export default {
-  name: "HeaderNavbar"
+  name: "HeaderNavbar",
 };
 </script>
 
