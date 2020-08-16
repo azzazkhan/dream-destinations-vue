@@ -68,12 +68,15 @@ header {
       }
       // Unordered list
       .navigation {
-        padding: 0;
+        &,
+        ul,
+        li {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+        }
         // List items
         .menu-item {
-          list-style: none;
-          padding: 0;
-          margin: 0;
           a {
             position: relative;
             color: get-color(primary-dark);
@@ -91,10 +94,24 @@ header {
             }
             &:focus {
               background-color: white;
-              color: map-get($colors, primary);
-              box-shadow: 4px 0 4px -4px rgba(0, 0, 0, 0.8);
+              color: get-color(primary);
+              box-shadow: 0 0 4px -4px rgba(0, 0, 0, 1);
               & > svg {
-                stroke: map-get($colors, primary);
+                stroke: get-color(primary);
+                stroke-width: 1.5px;
+              }
+            }
+          }
+          // Sub dropdown menu
+          &.has-children {
+            & > a {
+              &::after {
+                content: "\f078";
+                color: map-get($colors, primary_dark);
+                font-family: FontAwesome;
+                font-size: 14px;
+                float: right;
+                transition: transform 0.2s ease;
               }
             }
           }

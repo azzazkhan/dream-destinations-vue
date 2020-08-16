@@ -2,16 +2,6 @@ header {
   .navigation-wrapper nav {
     .navigation {
       .menu-item {
-        a {
-          &:focus {
-            background-color: white;
-            color: map-get($colors, primary);
-            box-shadow: 4px 0 4px -4px rgba(0, 0, 0, 0.8);
-            & > svg {
-              stroke: map-get($colors, primary);
-            }
-          }
-        }
         &.has-children {
           & > a {
             &::after {

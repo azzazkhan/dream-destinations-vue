@@ -144,6 +144,8 @@
 </template>
 
 <script>
+import "@/assets/js/nav.js";
+
 export default {
   name: "HeaderNavbar",
 };

@@ -2,7 +2,16 @@
 @import "~owl.carousel/src/scss/owl.carousel";
 @import "~owl.carousel/src/scss/owl.theme.default";
 
-// @import 'mixins';
-// @import 'variables';
+@import "mixins";
+@import "variables";
 
-// @import 'components/_components';
+a {
+  &,
+  &:hover,
+  &:focus,
+  &:active,
+  &:visited {
+    color: get-color(primary);
+    text-decoration: none;
+  }
+}
