@@ -13,10 +13,10 @@
       <div class="line"></div>
     </div>
     <!-- This overlay will cover the page content and act as a black mask over the content -->
-    <div class="navigation-wrapper">
+    <div class="navigation-wrapper bg-success">
       <nav>
-        <div class="header"></div>
-        <ul class="navigation">
+        <div class="header d-lg-none"></div>
+        <ul class="navigation d-lg-block">
           <li class="menu-item">
             <router-link to="/tripboard" class="has-icon">
               <svg
