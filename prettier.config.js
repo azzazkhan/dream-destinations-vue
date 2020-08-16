@@ -17,5 +17,5 @@ module.exports = {
    *  git repos
    * "crlf" - Carriage Return + Line Feed characters (\r\n), common on Windows
    */
-  endOfLine: "crlf",
+  endOfLine: "lf",
 };

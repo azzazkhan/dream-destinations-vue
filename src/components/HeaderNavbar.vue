@@ -1,15 +1,19 @@
 <template>
-  <header class="HeaderNavbarComponent">
+  <header
+    class="HeaderNavbarComponent bg-danger position-absolute d-flex justify-content-between align-items-stretch"
+  >
     <!-- This container will hold the logo image. Note that use of <img> tag is must even for SVGs -->
     <div class="logo-wrapper">
-      <img src="./assets/img/logo.svg" alt />
+      <router-link to="/" class="d-flex h-100 w-100 justify-content-center align-items-center">
+        <img src="@/assets/img/logo.svg" class="logo" alt="Image not available" />
+      </router-link>
     </div>
     <!-- Animated menu icon -->
-    <div class="icon-menu animated-icon hamburger">
+    <div class="hamburger icon-menu animated-icon d-flex d-lg-none">
       <div class="line"></div>
     </div>
     <!-- This overlay will cover the page content and act as a black mask over the content -->
-    <div class="navigation-wrapper">
+    <div class="navigation-wrapper opened">
       <nav>
         <div class="header"></div>
         <ul class="navigation">
@@ -145,5 +149,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style scoped lang="scss" src="@/assets/scss/components/header.scss"></style>

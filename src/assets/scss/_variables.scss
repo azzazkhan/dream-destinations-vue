@@ -1,28 +1,45 @@
-@import 'mixins';
+@import "mixins";
 
-$colors: (
-	background: white,
-	faded: #f9f8f7,
-	primary: #245abc,
-	primary_dark: shade(#245abc, 50%),
-	base_text: #1e1e1e,
+$z-index: (
+  header: 2,
+  header-hambuger: 3,
+  header-navigation-overlay: 3,
 );
 
-$fonts: (
-	primary: (
-		'Compass Sans',
-		sans-serif,
-	),
-	display: (
-		'Lobster',
-		cursive,
-	),
-	input: (
-		'Lato',
-		sans-serif,
-	),
-	heading: (
-		'Open Sans',
-		sans-serif,
-	),
+$sizing: (
+  header: (
+    height: 48px,
+  ),
+);
+
+$colors: (
+  primary: #245abc,
+  primary-dark: shade(#245abc, 50%),
+  background: white,
+  faded: #f9f8f7,
+  base-text: #1e1e1e,
+  header-overlay-background: rgba(0, 0, 0, 0.6),
+);
+
+$font-families: (
+  primary: (
+    "Compass Sans",
+    sans-serif,
+  ),
+  display: (
+    "Lobster",
+    cursive,
+  ),
+  input: (
+    "Lato",
+    sans-serif,
+  ),
+  heading: (
+    "Open Sans",
+    sans-serif,
+  ),
+);
+
+$font-sizes: (
+  global: 16px,
 );

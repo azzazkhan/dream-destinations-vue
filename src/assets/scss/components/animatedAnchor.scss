@@ -1,0 +1,32 @@
+a.animated-link {
+  &,
+  &:hover,
+  &:active,
+  &:visited,
+  &:focus {
+    position: relative;
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.1s ease;
+  }
+  &,
+  &:visited {
+    &:not(.no-decoration)::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      background-color: #ffffff;
+      bottom: -2px;
+      display: block;
+      height: 1px;
+      width: 0;
+      transition: all 0.2s ease;
+    }
+  }
+  &.active,
+  &:hover::before,
+  &:active::before,
+  &:focus::before {
+    width: 100%;
+  }
+}

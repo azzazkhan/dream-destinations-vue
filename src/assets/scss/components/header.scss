@@ -1,0 +1,105 @@
+@import "../variables";
+@import "../mixins";
+
+header {
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: get-index(header);
+  height: get-size(header, height);
+  padding: 0 5px 0 24px;
+  .logo-wrapper img {
+    max-height: 30px;
+  }
+  .hamburger {
+    z-index: get-index(header-hamburger);
+    width: 45px;
+    transform: scale(0.7);
+    .line {
+      &,
+      &::before,
+      &::after {
+        background-color: white;
+        box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+      }
+    }
+    &.toggled .line {
+      box-shadow: none;
+      &::before,
+      &::after {
+        background-color: black;
+        box-shadow: none;
+      }
+    }
+  }
+  //   The navigation overlay (which darkens the background)
+  .navigation-wrapper {
+    position: fixed;
+    background: get-color(header-overlay-background);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    visibility: hidden; // Hide by default
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    // When the navbar is opened
+    &.opened {
+      visibility: visible;
+      opacity: 1;
+      nav {
+        // Pull the navigation back into the screen (from right)
+        transform: translateX(0%);
+      }
+    }
+    nav {
+      position: absolute;
+      background-color: get-color(faded);
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 90vw;
+      // By default the navigation will be pushed out of the screen (right side)
+      transform: translateX(100%);
+      transition: transform 0.4s ease-out;
+      .header {
+        height: get-size(header, height);
+        border-bottom: 1px solid #dedede;
+      }
+      // Unordered list
+      .navigation {
+        padding: 0;
+        // List items
+        .menu-item {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          a {
+            position: relative;
+            color: get-color(primary-dark);
+            font-size: get-font-size(global);
+            font-weight: 500;
+            display: block;
+            padding: 12px 20px 12px 45px;
+            & > svg {
+              position: absolute;
+              stroke: get-color(primary-dark);
+              top: 50%;
+              left: 12px;
+              margin-right: 5px;
+              transform: translateY(-50%);
+            }
+            &:focus {
+              background-color: white;
+              color: map-get($colors, primary);
+              box-shadow: 4px 0 4px -4px rgba(0, 0, 0, 0.8);
+              & > svg {
+                stroke: map-get($colors, primary);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
