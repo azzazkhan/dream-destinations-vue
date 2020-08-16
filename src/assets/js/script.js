@@ -1,18 +1,6 @@
 import jQuery from "jquery";
 
 jQuery(document).ready($ => {
-  // Disable all anchor tags.
-  $('a:not([href="#"])').on("click", _e => {
-    _e.preventDefault();
-  });
-  // Animated menu icons.
-  $(".icon-menu.animated-icon").each((_index, _el) => {
-    _el = $(_el);
-    _el.on("click", _e => {
-      _e.preventDefault();
-      _el.toggleClass("toggled");
-    });
-  });
   {
     // Navgation logic goes in saperate block
     // Navigation toggle logic
@@ -34,16 +22,6 @@ jQuery(document).ready($ => {
         }, 400);
       }
       _nav_opened = !_nav_opened;
-    });
-    // Navigation submenu toggle logic (accordition logic implemented)
-    $("nav .menu-item.has-children").each((_index, _el) => {
-      _el = $(_el);
-      _el.find("> a").on("click", () => {
-        _el.toggleClass("opened");
-        let _submenu = _el.find(".sub-menu")[0];
-        if (_submenu.style.maxHeight) _submenu.style.maxHeight = null;
-        else _submenu.style.maxHeight = `${_submenu.scrollHeight}px`;
-      });
     });
     // TODO: Implement navigation visibility bug after resizing window
     $(window).resize({}, () => {

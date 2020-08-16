@@ -13,12 +13,12 @@
       <div class="line"></div>
     </div>
     <!-- This overlay will cover the page content and act as a black mask over the content -->
-    <div class="navigation-wrapper opened">
+    <div class="navigation-wrapper">
       <nav>
         <div class="header"></div>
         <ul class="navigation">
           <li class="menu-item">
-            <a href="/tripboard" class="has-icon">
+            <router-link to="/tripboard" class="has-icon">
               <svg
                 focusable="false"
                 data-id="SVG_HEART__24"
@@ -35,7 +35,7 @@
                 />
               </svg>
               Trip Boards
-            </a>
+            </router-link>
           </li>
           <li class="menu-item has-children">
             <a href="#" class="has-icon">
@@ -59,10 +59,10 @@
             </a>
             <ul class="sub-menu">
               <li class="menu-item">
-                <a href="javascript:void(0)" onclick="_openModal('#login_modal_1')">Traveler Login</a>
+                <a href="#" onclick="_openModal('#login_modal_1')">Traveler Login</a>
               </li>
               <li class="menu-item">
-                <a href="javascript:void(0)" onclick="_openModal('#login_modal_1')">Owner Login</a>
+                <a href="#" onclick="_openModal('#login_modal_1')">Owner Login</a>
               </li>
             </ul>
           </li>
@@ -115,16 +115,16 @@
             </a>
             <ul class="sub-menu">
               <li class="menu-item">
-                <a href="/help?topic=traveler">Traveler Help</a>
+                <router-link to="/help?topic=traveler">Traveler Help</router-link>
               </li>
               <li class="menu-item">
-                <a href="/help?topic=owner">Owner Help</a>
+                <router-link to="/help?topic=owner">Owner Help</router-link>
               </li>
               <li class="menu-item">
-                <a href="/help?topic=property_manager">Property Manager Help</a>
+                <router-link to="/help?topic=property_manager">Property Manager Help</router-link>
               </li>
               <li class="menu-item">
-                <a href="/trust">Trust & Safety</a>
+                <router-link to="/trust">Trust & Safety</router-link>
               </li>
             </ul>
           </li>
@@ -135,7 +135,7 @@
             <a href="#">EN</a>
           </li>
           <li class="menu-item cta-button">
-            <a href="/list">List your property</a>
+            <router-link to="/list">List your property</router-link>
           </li>
         </ul>
       </nav>
@@ -144,7 +144,8 @@
 </template>
 
 <script>
-import "@/assets/js/nav.js";
+import "../assets/js/navbarItemCollapse.js";
+import "../assets/js/navbarSidenav.js";
 
 export default {
   name: "HeaderNavbar",

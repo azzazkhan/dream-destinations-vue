@@ -3,39 +3,7 @@ header {
     .navigation {
       .menu-item {
         &.has-children {
-          & > a {
-            &::after {
-              content: "\f078";
-              color: map-get($colors, primary_dark);
-              font-family: FontAwesome;
-              font-size: 14px;
-              float: right;
-              transition: transform 0.2s ease;
-            }
-            &:focus::after {
-              color: map-get($colors, primary);
-            }
-          }
-          .sub-menu {
-            visibility: hidden;
-            max-height: 0;
-            opacity: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease, opacity 0.2s ease-in;
-          }
           &.opened {
-            & > a {
-              background-color: white;
-              color: map-get($colors, primary);
-              box-shadow: 4px 0 4px -4px rgba(0, 0, 0, 0.8);
-              & > svg {
-                stroke: map-get($colors, primary);
-              }
-              &::after {
-                color: map-get($colors, primary);
-                transform: rotate(180deg);
-              }
-            }
             & > .sub-menu {
               visibility: visible;
               opacity: 1;

@@ -9,7 +9,8 @@ header {
   height: get-size(header, height);
   padding: 0 5px 0 24px;
   .logo-wrapper img {
-    max-height: 30px;
+    min-height: 20px;
+    max-height: get-size(header, height) - 15px;
   }
   .hamburger {
     z-index: get-index(header-hamburger);
@@ -75,12 +76,21 @@ header {
           padding: 0;
           list-style: none;
         }
+        .active-menu-item {
+          color: get-color(primary);
+          background-color: white;
+          box-shadow: 0 0 4px -4px rgba(0, 0, 0, 1);
+          & > svg {
+            stroke: get-color(primary);
+            stroke-width: 1.5px;
+          }
+        }
         // List items
         .menu-item {
           a {
             position: relative;
             color: get-color(primary-dark);
-            font-size: get-font-size(global);
+            font-size: get-font-size(base);
             font-weight: 500;
             display: block;
             padding: 12px 20px 12px 45px;
@@ -93,13 +103,16 @@ header {
               transform: translateY(-50%);
             }
             &:focus {
-              background-color: white;
-              color: get-color(primary);
-              box-shadow: 0 0 4px -4px rgba(0, 0, 0, 1);
+              @extend .active-menu-item;
+            }
+            &.router-link-active,
+            &.router-link-exact {
+              color: tint(get-color(primary), 10%);
+              background: get-color(faded);
               & > svg {
-                stroke: get-color(primary);
-                stroke-width: 1.5px;
+                stroke: tint(get-color(primary), 10%);
               }
+              @extend .active-menu-item;
             }
           }
           // Sub dropdown menu
@@ -107,12 +120,44 @@ header {
             & > a {
               &::after {
                 content: "\f078";
-                color: map-get($colors, primary_dark);
+                color: get-color(primary-dark);
                 font-family: FontAwesome;
-                font-size: 14px;
+                font-size: calc(get-font-size(base) - 5px);
                 float: right;
                 transition: transform 0.2s ease;
               }
+              &:focus::after {
+                color: get-color(primary);
+              }
+            }
+            &.opened {
+              // Highlight the opened menu trigger
+              & > a {
+                @extend .active-menu-item;
+                &::after {
+                  color: get-color(primary);
+                  transform: rotate(180deg);
+                }
+              }
+              & > .sub-menu {
+                visibility: visible;
+                opacity: 1;
+                .menu-item > a {
+                  padding-left: 70px;
+                  & > svg {
+                    left: 40px;
+                  }
+                }
+              }
+            }
+            // Added accordition logic from W3Schools HowTo example.
+            // The menu will be collapsed by default.
+            .sub-menu {
+              visibility: hidden;
+              opacity: 0;
+              overflow: hidden;
+              max-height: 0;
+              transition: max-height 0.4s ease, opacity 0.2s ease-in;
             }
           }
         }

@@ -7,7 +7,8 @@
 </template>
 
 <script>
-import Header from "./components/Header";
+import "./assets/js/animatedIcon.js";
+import Header from "./components/Header.vue";
 
 export default {
   name: "App",
