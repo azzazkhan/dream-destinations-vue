@@ -1,0 +1,97 @@
+@import "../variables";
+@import "../mixins";
+
+.booking-form {
+  background-color: #f5f4f3;
+  padding: 20px;
+  border-top: 1px solid #c0c0c0;
+  border-bottom: 1px solid #c0c0c0;
+  width: 100%;
+  @include breakpoint(sm) {
+    width: 85%;
+    border-radius: 10px;
+  }
+  @include breakpoint(md) {
+    width: 70%;
+  }
+  @include breakpoint(lg) {
+    width: 80%;
+    border-radius: 12px;
+  }
+  .field-wrapper {
+    position: relative;
+    margin-bottom: 10px;
+    @include breakpoint(lg) {
+      margin: 0;
+      width: calc(30% - 20px);
+      &.location {
+        flex-grow: 2;
+        max-width: 40%;
+      }
+      &.guests {
+        min-width: 100px;
+        max-width: 150px;
+      }
+      &.submit {
+        width: 200px;
+      }
+    }
+    .icon {
+      position: absolute;
+      top: calc(50% - 1px);
+      left: 5px;
+      transform: translateY(-50%) scale(0.8);
+      svg {
+        stroke-width: 1.5px;
+        stroke: #717171;
+      }
+    }
+    input {
+      background-color: white;
+      cursor: pointer;
+      font-family: get-font(input);
+      font-size: get-font-size(input);
+      vertical-align: middle;
+      line-height: get-size(hero-input, height);
+      height: get-size(hero-input, height);
+      width: 100%;
+      padding: 15px 15px 15px 30px;
+      border: 1px solid #ddddde;
+      border-radius: 4px;
+      transition: box-shadow 0.2s ease;
+      box-shadow: 0 0 0 0 get-color(primary), 0 3px 8px -4px rgba(0, 0, 0, 0.2);
+      &:focus {
+        box-shadow: 0 0 0 2px get-color(primary),
+          0 3px 8px -4px rgba(0, 0, 0, 0.2);
+      }
+      @include breakpoint(lg) {
+        width: calc(100% - 5px);
+      }
+    }
+    // This field is need to be styled saperately because it merges two fields into one.
+    &.date {
+      .input-wrapper {
+        // Make both feilds a bit smaller so sibling may not overlap focus shadow.
+        width: calc(50% - 2px);
+        // On desktop, the `input` fields have less width
+        @include breakpoint(lg) {
+          width: 50%;
+        }
+        // Adjust the icon of the right field
+        &.departure .icon {
+          left: calc(50% + 2px + 5px);
+        }
+      }
+    }
+    &.submit {
+      margin-top: 20px;
+      .icon {
+        position: relative;
+        left: 0;
+      }
+      @include breakpoint(lg) {
+        margin-top: 0;
+      }
+    }
+  }
+}

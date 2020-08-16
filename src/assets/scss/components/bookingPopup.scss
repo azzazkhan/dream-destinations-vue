@@ -1,0 +1,58 @@
+@import "../variables";
+@import "../mixins";
+
+.selection-box {
+  position: fixed;
+  background-color: white;
+  top: 0;
+  right: 0;
+  //   display: none;
+  bottom: 0;
+  left: 0;
+  z-index: get-index(booking-form-selection);
+  // visibility: hidden;
+  // opacity: 0;
+  transition: opacity 0.2s ease;
+  &.opened {
+    visibility: visible;
+    opacity: 1;
+  }
+  .header {
+    position: relative;
+    z-index: 12;
+    display: flex;
+    height: get-size(booking-form-popup-input, height);
+    width: calc(100% + 2px);
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.1);
+    padding: 0 20px;
+    transform: translate(-1px, -1px);
+    .title {
+      font-family: "Open Sans", sans-serif;
+      font-weight: 300;
+      margin: 0;
+    }
+    .input-capture {
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 18px;
+      height: get-size(booking-form-popup-input, height);
+      width: 100%;
+      padding: 0 50px 0 20px;
+      border: 0;
+      &:focus {
+        box-shadow: 0 3px 8px -4px rgba(0, 0, 0, 0.2) !important;
+      }
+    }
+    .close-icon svg {
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      stroke: #292929;
+      stroke-width: 1.5px;
+      transform: translateY(-50%);
+    }
+  }
+}

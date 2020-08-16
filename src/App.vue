@@ -19,3 +19,4 @@ export default {
 
 <style lang="scss" src="@/assets/scss/components/animatedMenuIcon.scss"></style>
 <style lang="scss" src="@/assets/scss/components/animatedAnchor.scss"></style>
+<style lang="scss" src="@/assets/scss/components/customButton.scss"></style>

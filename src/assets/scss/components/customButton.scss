@@ -1,0 +1,39 @@
+@import "../variables";
+@import "../mixins";
+
+.custom-btn {
+  color: white;
+  cursor: pointer;
+  background-color: get-color(primary);
+  font-weight: 500;
+  display: flex;
+  width: 100%;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border: 0;
+  border-radius: 25px;
+  transition: box-shadow 0.2s ease;
+  &.inline {
+    line-height: 48px;
+    vertical-align: middle;
+    display: inline-block;
+    width: auto;
+    padding: 0 30px;
+  }
+  &:disabled {
+    pointer-events: none;
+    background-color: tint(get-color(primary), 25%);
+  }
+  &:focus {
+    box-shadow: 0 0 0 2px white, 0 0 0 4px get-color(primary);
+  }
+  .icon {
+    display: inline-block;
+    margin-right: 2px;
+    svg {
+      stroke: white !important;
+    }
+  }
+}

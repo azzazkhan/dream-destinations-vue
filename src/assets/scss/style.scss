@@ -1,9 +1,19 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:400,bold|Open+Sans:300|Lobster");
 @import "~bootstrap/scss/bootstrap";
 @import "~owl.carousel/src/scss/owl.carousel";
 @import "~owl.carousel/src/scss/owl.theme.default";
 
 @import "mixins";
 @import "variables";
+
+* {
+  &,
+  &::before,
+  &::after {
+    @include prefix(box-sizing, border-box);
+    outline: none !important;
+  }
+}
 
 a {
   &,

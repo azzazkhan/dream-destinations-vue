@@ -5,11 +5,18 @@ $z-index: (
   header-hamburger: 5,
   header-navigation-overlay: 3,
   header-dropdown-menu: 4,
+  booking-form-selection: 6,
 );
 
 $sizing: (
   header: (
     height: 48px,
+  ),
+  hero-input: (
+    height: 48px,
+  ),
+  booking-form-popup-input: (
+    height: 64px,
   ),
 );
 
@@ -27,7 +34,7 @@ $font-families: (
     "Compass Sans",
     sans-serif,
   ),
-  display: (
+  hero-title: (
     "Lobster",
     cursive,
   ),
@@ -43,4 +50,5 @@ $font-families: (
 
 $font-sizes: (
   base: 16px,
+  input: 14px,
 );

@@ -1,6 +1,6 @@
 <template>
   <header
-    class="HeaderNavbarComponent bg-danger position-absolute d-flex justify-content-between align-items-stretch"
+    class="HeaderNavbarComponent position-absolute d-flex justify-content-between align-items-stretch"
   >
     <!-- This container will hold the logo image. Note that use of <img> tag is must even for SVGs -->
     <div class="logo-wrapper">
@@ -13,7 +13,7 @@
       <div class="line"></div>
     </div>
     <!-- This overlay will cover the page content and act as a black mask over the content -->
-    <div class="navigation-wrapper bg-success">
+    <div class="navigation-wrapper">
       <nav>
         <div class="header d-lg-none"></div>
         <ul class="navigation d-lg-block">
