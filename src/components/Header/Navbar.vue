@@ -144,8 +144,8 @@
 </template>
 
 <script>
-import "../assets/js/navbarItemCollapse.js";
-import "../assets/js/navbarSidenav.js";
+import "@/assets/js/navbarItemCollapse.js";
+import "@/assets/js/navbarSidenav.js";
 
 export default {
   name: "HeaderNavbar",

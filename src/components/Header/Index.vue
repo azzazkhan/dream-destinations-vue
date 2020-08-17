@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import HeaderNavbar from "./HeaderNavbar";
+import HeaderNavbar from "./Navbar";
 
 export default {
   name: "Header",

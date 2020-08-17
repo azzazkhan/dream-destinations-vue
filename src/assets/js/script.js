@@ -2,27 +2,9 @@ import jQuery from "jquery";
 
 jQuery(document).ready($ => {
   {
-    // Navgation logic goes in saperate block
-    // Navigation toggle logic
     let _hamburger = $(".hamburger").eq(0);
     let _nav = $(".navigation-wrapper").eq(0);
     let _nav_opened = false;
-    _hamburger.on("click", _e => {
-      _e.preventDefault();
-      if (!_nav_opened) {
-        _nav.css("visibility", "visible");
-        setTimeout(() => {
-          _nav.addClass("opened");
-        }, 200);
-      } else {
-        _nav.css("visibility", "visible");
-        _nav.removeClass("opened");
-        setTimeout(() => {
-          _nav.css("visibility", "hidden");
-        }, 400);
-      }
-      _nav_opened = !_nav_opened;
-    });
     // TODO: Implement navigation visibility bug after resizing window
     $(window).resize({}, () => {
       // let _desktop =

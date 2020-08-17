@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import BookingForm from "./BookingForm.vue";
+import BookingForm from "@/components/Booking/Form";
 
 export default {
   name: "Hero",
