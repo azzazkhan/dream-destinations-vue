@@ -32,7 +32,7 @@
         placeholder="Where do you want to go?"
         autocomplete="off"
       />
-      <BookingPopup class="opened" :input="{placeholder: 'Where do you want to go?'}" />
+      <BookingPopup :input="{placeholder: 'Where do you want to go?'}" />
     </div>
     <div class="field-wrapper has-selection-box date d-flex justify-content-between">
       <div class="input-wrapper arrival">
