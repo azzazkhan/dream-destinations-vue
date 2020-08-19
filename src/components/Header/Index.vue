@@ -5,15 +5,14 @@
 </template>
 
 <script>
-import HeaderNavbar from "./Navbar";
+  import HeaderNavbar from "./Navbar";
 
-export default {
-  name: "Header",
-  components: {
-    HeaderNavbar,
-  },
-};
+  export default {
+    name: "Header",
+    components: {
+      HeaderNavbar,
+    },
+  };
 </script>
 
-<style>
-</style>
+<style></style>

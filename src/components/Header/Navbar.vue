@@ -18,27 +18,13 @@
         <div class="header d-lg-none"></div>
         <ul class="navigation d-lg-block">
           <li class="menu-item">
-            <router-link to="/tripboard" class="has-icon">
-              <svg
-                focusable="false"
-                data-id="SVG_HEART__24"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M12 6.7s1.49-2.6 4.63-2.6c2.73 0 4.62 2.24 4.62 4.9 0 3.77-3.94 6.07-9.25 10.9C6.69 15.07 2.75 12.77 2.75 9c0-2.66 1.89-4.9 4.63-4.9C10.5 4.1 12 6.7 12 6.7z"
-                />
-              </svg>
-              Trip Boards
-            </router-link>
+            <router-link to="/">Home</router-link>
+          </li>
+          <li class="menu-item">
+            <router-link to="/about">About Us</router-link>
           </li>
           <li class="menu-item has-children">
-            <a href="#" class="has-icon">
+            <a href="javascript:void(0)" class="has-icon">
               <svg
                 focusable="false"
                 data-id="SVG_PERSON__24"
@@ -59,15 +45,21 @@
             </a>
             <ul class="sub-menu">
               <li class="menu-item">
-                <a href="#" onclick="_openModal('#login_modal_1')">Traveler Login</a>
+                <a
+                  href="javascript:void(0)"
+                  onclick="_openModal('javascript:void(0)login_modal_1')"
+                >Traveler Login</a>
               </li>
               <li class="menu-item">
-                <a href="#" onclick="_openModal('#login_modal_1')">Owner Login</a>
+                <a
+                  href="javascript:void(0)"
+                  onclick="_openModal('javascript:void(0)login_modal_1')"
+                >Owner Login</a>
               </li>
             </ul>
           </li>
           <li class="menu-item">
-            <a href="#" class="has-icon">
+            <a href="javascript:void(0)" class="has-icon">
               <svg
                 focusable="false"
                 data-id="SVG_INVITE__24"
@@ -88,7 +80,7 @@
             </a>
           </li>
           <li class="menu-item has-children">
-            <a href="#" class="has-icon">
+            <a href="javascript:void(0)" class="has-icon">
               <svg
                 focusable="false"
                 data-id="SVG_QUESTION__24"
@@ -129,13 +121,24 @@
             </ul>
           </li>
           <li class="menu-item">
-            <a href="#">USD ($)</a>
-          </li>
-          <li class="menu-item">
-            <a href="#">EN</a>
-          </li>
-          <li class="menu-item cta-button">
-            <router-link to="/list">List your property</router-link>
+            <router-link to="/tripboard" class="has-icon">
+              <svg
+                focusable="false"
+                data-id="SVG_HEART__24"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 6.7s1.49-2.6 4.63-2.6c2.73 0 4.62 2.24 4.62 4.9 0 3.77-3.94 6.07-9.25 10.9C6.69 15.07 2.75 12.77 2.75 9c0-2.66 1.89-4.9 4.63-4.9C10.5 4.1 12 6.7 12 6.7z"
+                />
+              </svg>
+              Trip Boards
+            </router-link>
           </li>
         </ul>
       </nav>
@@ -152,4 +155,8 @@ export default {
 };
 </script>
 
-<style scoped lang="scss" src="@/assets/scss/components/header.scss"></style>
+<style
+  scoped
+  lang="scss"
+  src="@/assets/scss/components/headerNavbar.scss"
+></style>

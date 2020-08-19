@@ -8,9 +8,7 @@ jQuery($ => {
       _box.addClass(!_box.hasClass("opened") ? "opened" : "");
     });
     _el.find(".dismiss-selection").on("click", () => {
-      setTimeout(() => {
-        _box.removeClass("opened");
-      }, 200);
+      _box.removeClass("opened");
     });
   });
 });

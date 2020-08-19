@@ -1,0 +1,56 @@
+@import "../variables";
+@import "../mixins";
+.place {
+  position: relative;
+  background: transparent;
+  cursor: pointer;
+  font-family: "Lato", sans-serif;
+  padding: 10px 20px 10px 40px;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+  &:hover {
+    background-color: get-color(primary);
+    border-color: get-color(primary);
+    &,
+    * {
+      color: white !important;
+      transition: color 0.1s ease;
+      .icon svg {
+        stroke: white !important;
+        transition: stroke 0.1s ease;
+      }
+    }
+  }
+  .icon {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    svg {
+      stroke: map-get($colors, primary);
+      transform: scale(1.2);
+    }
+  }
+  .name {
+    color: map-get($colors, primary);
+    font-weight: bold;
+    font-size: 16px;
+  }
+  .location {
+    font-size: 12px;
+  }
+  .type {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 12px;
+  }
+  .name,
+  .location {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: calc(100% - 80px);
+  }
+}

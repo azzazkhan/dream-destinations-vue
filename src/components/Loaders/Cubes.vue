@@ -15,9 +15,13 @@
 </template>
 
 <script>
-export default {
-  name: "CubesLoader",
-};
+  export default {
+    name: "CubesLoader",
+  };
 </script>
 
-<style scoped lang="scss" src="@/assets/scss/components/cubesLoader.scss"></style>
+<style
+  scoped
+  lang="scss"
+  src="@/assets/scss/components/cubesLoader.scss"
+></style>

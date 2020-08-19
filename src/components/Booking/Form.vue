@@ -24,15 +24,17 @@
         </svg>
       </span>
       <input
-        type="text"
-        class="trigger-select-box"
-        name="destination"
         v-model="search.input_holder"
-        @keydown="filter_location"
+        type="text"
+        class="trigger-selection"
+        name="destination"
         placeholder="Where do you want to go?"
         autocomplete="off"
+        @keydown="filter_location"
       />
-      <BookingPopup :input="{placeholder: 'Where do you want to go?'}" />
+      <BookingPopup :input="{ placeholder: 'Where do you want to go?' }">
+        <LocationsList :places="locations" />
+      </BookingPopup>
     </div>
     <div class="field-wrapper has-selection-box date d-flex justify-content-between">
       <div class="input-wrapper arrival">
@@ -67,7 +69,7 @@
             </g>
           </svg>
         </span>
-        <input type="text" class="trigger-select-box" name="arrival" placeholder="Arrival" readonly />
+        <input type="text" class="trigger-selection" name="arrival" placeholder="Arrival" readonly />
       </div>
       <div class="input-wrapper departure">
         <span class="icon">
@@ -100,13 +102,7 @@
             </g>
           </svg>
         </span>
-        <input
-          type="text"
-          class="trigger-select-box"
-          name="departure"
-          placeholder="Depart"
-          readonly
-        />
+        <input type="text" class="trigger-selection" name="departure" placeholder="Depart" readonly />
       </div>
       <div class="selection-box d-none">
         <div class="header">
@@ -145,134 +141,16 @@
         </svg>
       </span>
       <input
-        type="text"
-        class="trigger-select-box"
-        name="guests"
         v-model="total_guests"
+        type="text"
+        class="trigger-selection"
+        name="guests"
         placeholder="Guests"
         readonly
       />
-      <div class="selection-box d-none">
-        <div class="header">
-          <h3 class="title">Select guests</h3>
-          <span class="close-icon dismiss-selection">
-            <svg
-              focusable="false"
-              data-id="SVG_CLOSE__16"
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M12.5 12.5l-9-9m9 0l-9 9"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </span>
-        </div>
-        <div class="selection-content">
-          <div class="selection-field">
-            <div class="description">
-              {{ search.guests.adults == 0 ? 'No' :
-              search.guests.adults }} {{
-              search.guests.adults > 1 ? 'Adults' : 'Adult' }}
-            </div>
-            <div class="actions">
-              <button class="minus" @click="remove_adult()">
-                <svg
-                  focusable="false"
-                  data-id="SVG_MINUS__16"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path fill="none" stroke-linecap="round" stroke-linejoin="round" d="M12.5 8h-9" />
-                </svg>
-              </button>
-              <button class="plus" @click="add_adult()">
-                <svg
-                  focusable="false"
-                  data-id="SVG_PLUS__16"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M8 12.5v-9M12.5 8h-9"
-                    fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </button>
-            </div>
-          </div>
-          <div class="selection-field">
-            <div class="description">
-              {{ search.guests.children == 0 ? 'No' :
-              search.guests.children }} {{
-              search.guests.children > 1 ? 'Children' : 'Child'
-              }}
-            </div>
-            <div class="actions">
-              <button class="minus" @click="remove_child()">
-                <svg
-                  focusable="false"
-                  data-id="SVG_MINUS__16"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path fill="none" stroke-linecap="round" stroke-linejoin="round" d="M12.5 8h-9" />
-                </svg>
-              </button>
-              <button class="plus" @click="add_child()">
-                <svg
-                  focusable="false"
-                  data-id="SVG_PLUS__16"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M8 12.5v-9M12.5 8h-9"
-                    fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </button>
-            </div>
-          </div>
-          <div class="selection-field">
-            <div class="description">Pets</div>
-            <div class="actions">
-              <button
-                class="text"
-                @click="search.guests.pets = true"
-                :class="{'active': search.guests.pets}"
-              >Yes</button>
-              <button
-                class="text"
-                @click="search.guests.pets = false"
-                :class="{'active': !search.guests.pets}"
-              >No</button>
-            </div>
-          </div>
-          <p
-            class="pets-notice"
-            :class="{'show': search.guests.pets}"
-          >Only hotels that allow pets will be shown</p>
-          <button class="custom-btn blue continue dismiss-selection">Continue</button>
-        </div>
-      </div>
+      <BookingPopup title="Select Guests" :dismiss-button="true">
+        <GuestsWidget />
+      </BookingPopup>
     </div>
     <div class="field-wrapper submit">
       <button type="submit" class="custom-btn blue">
@@ -301,15 +179,21 @@
 
 <script>
 import BookingPopup from "./Popup.vue";
+import LocationsList from "./LocationsList.vue";
+import Locations from "@/data/locations.json";
+import GuestsWidget from "./GuestsWidget.vue";
 
 export default {
   name: "BookingForm",
   components: {
     BookingPopup,
+    LocationsList,
+    GuestsWidget,
   },
   data() {
     return {
-      location: "",
+      place: "",
+      locations: [],
       search: {
         input_holder: "",
         loading: false,
@@ -337,6 +221,9 @@ export default {
       return `${_total_guests} Guests` + _pets;
     },
   },
+  mounted() {
+    this.locations = Locations;
+  },
   methods: {
     filter_location() {
       this.search.loading = true;
@@ -351,22 +238,6 @@ export default {
         this.search.loading = false;
       }, 500);
     },
-    add_adult() {
-      if (this.search.guests.adults >= 20) return;
-      this.search.guests.adults++;
-    },
-    remove_adult() {
-      if (this.search.guests.adults < 1) this.search.guests.adults = 1;
-      this.search.guests.adults--;
-    },
-    add_child() {
-      if (this.search.guests.children >= 20) return;
-      this.search.guests.children++;
-    },
-    remove_child() {
-      if (this.search.guests.children < 1) this.search.guests.children = 1;
-      this.search.guests.children--;
-    },
     select_place(place) {
       this.search.input_holder = place;
     },
@@ -374,4 +245,8 @@ export default {
 };
 </script>
 
-<style scoped lang="scss" src="@/assets/scss/components/bookingForm.scss"></style>
+<style
+  scoped
+  lang="scss"
+  src="@/assets/scss/components/bookingForm.scss"
+></style>

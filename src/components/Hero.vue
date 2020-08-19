@@ -1,19 +1,21 @@
 <template>
-  <section class="hero d-flex flex-column justify-content-center align-items-center">
+  <section
+    class="hero d-flex flex-column justify-content-center align-items-center"
+  >
     <h1 class="featured-text text-white text-center">Find dream vacation</h1>
     <BookingForm />
   </section>
 </template>
 
 <script>
-import BookingForm from "@/components/Booking/Form";
+  import BookingForm from "@/components/Booking/Form";
 
-export default {
-  name: "Hero",
-  components: {
-    BookingForm,
-  },
-};
+  export default {
+    name: "Hero",
+    components: {
+      BookingForm,
+    },
+  };
 </script>
 
 <style scoped lang="scss" src="@/assets/scss/components/hero.scss"></style>

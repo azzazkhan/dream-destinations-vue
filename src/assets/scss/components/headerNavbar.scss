@@ -99,7 +99,7 @@ header {
         }
         // Reference Class!
         .active-menu-item {
-          color: get-color(primary);
+          color: get-color(primary) !important;
           background-color: white;
           box-shadow: 0 0 4px -4px rgba(0, 0, 0, 1);
           & > svg {
@@ -179,14 +179,24 @@ header {
               }
             }
             // Active link - classes handled by Vue.js
-            &.router-link-active,
-            &.router-link-exact {
+            &.router-link-exact,
+            &.router-link-exact-active {
               color: tint(get-color(primary), 10%);
               background: get-color(faded);
               & > svg {
                 stroke: tint(get-color(primary), 10%);
               }
               @extend .active-menu-item;
+              @include breakpoint(lg) {
+                color: color-get(primary) !important;
+                background-color: white;
+                font-weight: 500 !important;
+                box-shadow: 0 2px 8px -4px rgba(0, 0, 0, 0.6) !important;
+                border-radius: 0 0 4px 4px;
+                & > svg {
+                  stroke: color-get(primary) !important;
+                }
+              }
             }
           }
           // Sub dropdown menu
@@ -232,7 +242,7 @@ header {
                     stroke: black !important;
                   }
                   &::after {
-                    color: black;
+                    color: black !important;
                   }
                 }
               }
@@ -287,6 +297,13 @@ header {
                     color: get-color(primary) !important;
                     background-color: #f5f4f3;
                   }
+                }
+              }
+              .menu-item a {
+                &.router-link-exact,
+                &.router-link-exact-active {
+                  box-shadow: none !important;
+                  background: transparent;
                 }
               }
             }

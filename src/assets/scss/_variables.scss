@@ -2,10 +2,11 @@
 
 $z-index: (
   header: 2,
-  header-hamburger: 5,
   header-navigation-overlay: 3,
   header-dropdown-menu: 4,
+  header-hamburger: 5,
   booking-form-selection: 6,
+  booking-form-loader: 7,
 );
 
 $sizing: (
@@ -17,6 +18,13 @@ $sizing: (
   ),
   booking-form-popup-input: (
     height: 64px,
+  ),
+  custom-button: (
+    height: 48px,
+  ),
+  booking-form-toggle-text-button: (
+    height: 45px,
+    width: 65px,
   ),
 );
 

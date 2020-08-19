@@ -1,0 +1,80 @@
+@import "../variables";
+@import "../mixins";
+
+.selection-field {
+  $button-radius: 50px;
+  $button-size: (
+    height: 50px,
+  );
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px 15px;
+  .actions {
+    button {
+      background: transparent;
+      display: inline-flex;
+      height: $button-radius;
+      width: $button-radius;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      border: 1px solid #717171;
+      box-shadow: 0 0 0 0 get-color(primary);
+      transition: all 0.2s ease;
+      svg {
+        stroke: #717171;
+      }
+      &:focus {
+        border-color: get-color(primary);
+        box-shadow: 0 0 0 1px get-color(primary);
+        svg {
+          stroke: get-color(primary);
+          stroke-width: 2px;
+        }
+      }
+      &:active {
+        transform: scale(0.9);
+      }
+      &:last-of-type {
+        margin-left: 6px;
+      }
+      @include breakpoint(lg) {
+        cursor: pointer;
+        &:focus {
+          border-color: #717171;
+          box-shadow: 0 0 0 0 map-get($colors, primary);
+          svg {
+            stroke: #717171;
+            stroke-width: 1px;
+          }
+        }
+        &:hover {
+          border-color: map-get($colors, primary);
+          box-shadow: 0 0 0 1px map-get($colors, primary);
+          svg {
+            stroke: map-get($colors, primary);
+            stroke-width: 2px;
+          }
+        }
+      }
+      &.text {
+        font-family: "Lato", sans-serif;
+        font-weight: bold;
+        height: get-size(booking-form-toggle-text-button, height);
+        width: get-size(booking-form-toggle-text-button, width);
+        border-radius: 6px;
+        &.active {
+          color: white;
+          background-color: get-color(primary);
+          @include breakpoint(lg) {
+            &:hover {
+              box-shadow: 0 0 0 1px white, 0 0 0 3px map-get($colors, primary);
+            }
+          }
+        }
+      }
+    }
+  }
+}

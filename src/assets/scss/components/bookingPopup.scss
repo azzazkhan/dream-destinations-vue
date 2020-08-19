@@ -6,13 +6,37 @@
   background-color: white;
   top: 0;
   right: 0;
-  //   display: none;
   bottom: 0;
   left: 0;
   z-index: get-index(booking-form-selection);
   visibility: hidden;
   opacity: 0;
   transition: opacity 0.2s ease;
+  @include breakpoint(lg) {
+    position: absolute;
+    top: calc(100% + 15px);
+    right: auto;
+    left: 50%;
+    bottom: auto;
+    min-width: 320px;
+    min-height: 120px;
+    border: 1px solid #ddddde;
+    border-radius: 6px;
+    transform: translateX(-50%);
+    box-shadow: 0 2px 6px -2px rgba(0, 0, 0, 0.4);
+    &::before {
+      content: "";
+      position: absolute;
+      height: 15px;
+      width: 15px;
+      display: block;
+      background-color: white;
+      border-top: 1px solid #aaaaab;
+      border-right: 1px solid #aaaaab;
+      left: 50%;
+      transform: translate(-50%, -7.5px) rotate(-45deg);
+    }
+  }
   &.opened {
     visibility: visible;
     opacity: 1;
@@ -53,6 +77,37 @@
       stroke: #292929;
       stroke-width: 1.5px;
       transform: translateY(-50%);
+    }
+  }
+  .loader {
+    position: absolute;
+    z-index: -1;
+    background-color: rgba(255, 255, 255, 0.95);
+    // Add some space for the input's shadow
+    top: get-size(booking-form-popup-input, height) + 2px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.2s ease;
+    @include breakpoint(lg) {
+      top: 0;
+    }
+    &.active {
+      z-index: get-index(booking-form-loader);
+      opacity: 1;
+    }
+  }
+  .selection-content {
+    position: relative;
+    color: #717171;
+    height: 100%;
+    padding: 0 10px 60px;
+    @include breakpoint(lg) {
+      padding: 0 0 20px;
     }
   }
 }

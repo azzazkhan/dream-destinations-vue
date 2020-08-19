@@ -1,13 +1,17 @@
 <template>
   <div class="BookingPopupComponent selection-box">
-    <div class="header">
-      <h3 v-if="title && !input" class="title" v-text="title"></h3>
+    <div class="header d-lg-none">
+      <h4 v-if="title && !input" class="title" v-text="title"></h4>
       <input
         v-if="has_input_box"
+        v-model="entry"
         type="text"
         class="input-capture"
-        v-model="entry"
-        :placeholder="(typeof input.placeholder).toLowerCase() == 'string' ? input.placeholder : 'Please enter your data here.'"
+        :placeholder="
+          (typeof input.placeholder).toLowerCase() == 'string'
+            ? input.placeholder
+            : 'Please enter your data here.'
+        "
         autocomplete="off"
       />
       <span class="close-icon dismiss-selection">
@@ -28,15 +32,14 @@
         </svg>
       </span>
     </div>
-    <CubesLoader :class="{'d-none': !loading}" />
+    <CubesLoader :class="{ 'd-none': !loading, active: loading }" />
     <div class="selection-content px-0">
-      <!-- <div
-        v-if="entry.slice().length == 0 || search.matched.length == 0"
-        style="padding-top: 20px; text-align: center;"
-      >{{ entry.slice().length == 0 ? 'Please enter a location name' : 'No locations found' }}</div>-->
+      <slot>
+        <p class="p-3 m-5 text-center text-muted lead">Scilence is golden</p>
+      </slot>
       <button
         v-if="dismissButton"
-        class="custom-btn blue continue dismiss-selection w-75 mx-auto mt-4"
+        class="custom-btn blue continue dismiss-selection w-75 mx-auto mt-3"
       >Continue</button>
     </div>
   </div>
@@ -46,13 +49,16 @@
 import "@/assets/js/bookingPopup.js";
 
 import CubesLoader from "@/components/Loaders/Cubes.vue";
-// import BookingLocationList from "./BookingLocationsList.vue";
 
 export default {
   name: "BookingPopup",
+  components: {
+    CubesLoader,
+  },
   props: {
     title: {
       type: String,
+      default: "",
     },
     input: {
       type: Object,
@@ -66,27 +72,15 @@ export default {
       default: false,
     },
   },
-  components: {
-    CubesLoader,
-    // BookingLocationList,
-  },
   data() {
     return {
       entry: "",
-      search: {
-        input_holder: "",
-        loading: false,
-        arrival: "",
-        departure: "",
-        guests: {
-          adults: 0,
-          children: 0,
-          pets: false,
-        },
-        matched: [],
-        records: [],
-      },
     };
+  },
+  watch: {
+    entry(updated) {
+      this.$emit("inputUpdated", updated);
+    },
   },
   computed: {
     total_guests() {
@@ -139,4 +133,8 @@ export default {
   },
 };
 </script>
-<style scoped lang="scss" src="@/assets/scss/components/bookingPopup.scss"></style>
+<style
+  scoped
+  lang="scss"
+  src="@/assets/scss/components/bookingPopup.scss"
+></style>

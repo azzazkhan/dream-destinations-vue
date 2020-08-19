@@ -99,5 +99,8 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style
+  scoped
+  lang="scss"
+  src="@/assets/scss/components/bookingLocationItem.scss"
+></style>

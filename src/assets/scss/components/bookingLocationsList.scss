@@ -1,0 +1,14 @@
+@import "../variables";
+@import "../mixins";
+
+.places-wrapper {
+  position: relative;
+  max-height: calc(100% - 48px - 30px);
+  overflow-x: hidden;
+  overflow-y: scroll;
+  @include breakpoint(lg) {
+    max-height: 250px;
+    overflow-y: auto;
+    transform: none;
+  }
+}
