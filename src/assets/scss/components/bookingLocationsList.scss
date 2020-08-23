@@ -6,9 +6,16 @@
   max-height: calc(100% - 48px - 30px);
   overflow-x: hidden;
   overflow-y: scroll;
+  &.full-view {
+    max-height: calc(100% - 4px);
+  }
   @include breakpoint(lg) {
     max-height: 250px;
     overflow-y: auto;
     transform: none;
+    &,
+    &.full-view {
+      max-height: 350px;
+    }
   }
 }

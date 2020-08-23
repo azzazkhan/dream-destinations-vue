@@ -1,169 +1,54 @@
-.card {
-	position: relative;
-	overflow: hidden;
-	height: 380px;
-	width: 275px;
-	border-radius: 8px;
-	box-shadow: 0 4px 8px -2px rgba(0, 0, 0, 0.2);
-	transition: box-shadow 0.2s ease, transform 0.4s ease;
-	&:hover {
-		box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.4);
-		& {
-			&.scale {
-				transform: scale(1.05);
-			}
-			&.bg-zoom .background {
-				transform: scale(1.1);
-			}
-			&.bg-blur {
-				.background {
-					filter: blur(1px);
-				}
-				&.hard .background {
-					filter: blur(2px);
-				}
-			}
-			&.bg-mask .background::after {
-				opacity: 1;
-			}
-		}
-		.fadeable {
-			opacity: 1;
-		}
-		.content .btn-explore {
-			color: #1e1e1e;
-			background-color: white;
-		}
-	}
-	.fadeable {
-		opacity: 0;
-		transition: opacity 0.2s ease;
-	}
-	.background {
-		position: relative;
-		height: 100%;
-		width: 100%;
-		background-size: cover;
-		transition: transform 0.4s ease;
-		&::after {
-			content: '';
-			position: absolute;
-			background-color: rgba(0, 0, 0, 0.2);
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
-			opacity: 0;
-			transition: opacity 0.4s ease;
-		}
-	}
-	.content {
-		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		font-family: map-get($fonts, heading);
-		display: flex;
-		flex-direction: column;
-		justify-content: flex-end;
-		align-items: stretch;
-		padding: 60px 8px 8px;
-		.tags {
-			position: absolute;
-			top: 10px;
-			right: 2.5%;
-			left: 2.5%;
-			display: flex;
-			flex-wrap: wrap;
-			justify-self: start;
-			a {
-				color: white;
-				background-color: #111111;
-				font-size: 12px;
-				line-height: 20px;
-				opacity: 0.8;
-				display: inline-block;
-				height: 20px;
-				padding: 0 8px;
-				margin-right: 4px;
-				border-radius: 4px;
-				&:hover {
-					opacity: 1;
-				}
-			}
-		}
-		.title {
-			color: white;
-			width: 95%;
-			margin: 0 auto 20px;
-			text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
-		}
-		.btn-explore {
-			color: white;
-			background: transparent;
-			font-weight: bold;
-			line-height: 40px;
-			text-align: center;
-			height: 40px;
-			width: 95%;
-			margin: 0 auto 10px;
-			border-radius: 4px;
-			transition: background-color 0.4s ease;
-		}
-	}
-}
 .owl-carousel {
-	width: calc(100% - 25px);
-	margin: 0 auto;
-	position: relative;
-	&::after {
-		content: '';
-		position: absolute;
-		top: -5px;
-		right: -10px;
-		bottom: -5px;
-		width: 10px;
-		background: transparent;
-		display: block;
-		box-shadow: 10px 0 20px 15px rgba(#ffffff, 1);
-	}
-	.owl-nav {
-		button {
-			position: absolute;
-			background-color: white !important;
-			top: 50%;
-			z-index: 5;
-			height: 100px;
-			width: 50px;
-			border-radius: 4px;
-			transform: translateY(calc(-50% + 20px));
-			box-shadow: 0 2px 4px 2px rgba(#000000, 0.2);
-			transition: box-shadow 0.2s ease;
-			&:hover {
-				box-shadow: 0 2px 10px 1px rgba(#000000, 0.4);
-			}
-			&.owl-prev {
-				left: 0;
-				@include breakpoint(md) {
-					left: -25px;
-				}
-				@include breakpoint(lg) {
-					left: -35px;
-				}
-			}
-			&.owl-next {
-				right: 0;
-				svg {
-					transform: rotate(180deg);
-				}
-				@include breakpoint(md) {
-					right: -25px;
-				}
-				@include breakpoint(lg) {
-					right: -35px;
-				}
-			}
-		}
-	}
+  width: calc(100% - 25px);
+  margin: 0 auto;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    bottom: -5px;
+    width: 10px;
+    background: transparent;
+    display: block;
+    box-shadow: 10px 0 20px 15px rgba(#ffffff, 1);
+  }
+  .owl-nav {
+    button {
+      position: absolute;
+      background-color: white !important;
+      top: 50%;
+      z-index: 5;
+      height: 100px;
+      width: 50px;
+      border-radius: 4px;
+      transform: translateY(calc(-50% + 20px));
+      box-shadow: 0 2px 4px 2px rgba(#000000, 0.2);
+      transition: box-shadow 0.2s ease;
+      &:hover {
+        box-shadow: 0 2px 10px 1px rgba(#000000, 0.4);
+      }
+      &.owl-prev {
+        left: 0;
+        @include breakpoint(md) {
+          left: -25px;
+        }
+        @include breakpoint(lg) {
+          left: -35px;
+        }
+      }
+      &.owl-next {
+        right: 0;
+        svg {
+          transform: rotate(180deg);
+        }
+        @include breakpoint(md) {
+          right: -25px;
+        }
+        @include breakpoint(lg) {
+          right: -35px;
+        }
+      }
+    }
+  }
 }

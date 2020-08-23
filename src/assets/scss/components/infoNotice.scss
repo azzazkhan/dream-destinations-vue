@@ -1,0 +1,21 @@
+@import "../variables";
+@import "../mixins";
+.notice-info {
+  position: relative;
+  color: #303030;
+  width: 90%;
+  margin: 20px auto 40px;
+  padding: 15px 20px 15px 55px;
+  border: 1px solid #cccccd;
+  border-left: 4px solid get-color(primary);
+  border-radius: 4px;
+  .icon {
+    position: absolute;
+    left: 20px;
+    top: 15px;
+    svg {
+      stroke: get-color(primary);
+      stroke-width: 1.5px;
+    }
+  }
+}

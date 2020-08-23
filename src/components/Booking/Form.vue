@@ -24,16 +24,19 @@
         </svg>
       </span>
       <input
-        v-model="search.input_holder"
+        v-model="location.entry"
         type="text"
         class="trigger-selection"
         name="destination"
         placeholder="Where do you want to go?"
         autocomplete="off"
-        @keydown="filter_location"
       />
-      <BookingPopup :input="{ placeholder: 'Where do you want to go?' }">
-        <LocationsList :places="locations" />
+      <BookingPopup
+        :input="{ placeholder: 'Where do you want to go?' }"
+        :loading="location.loading"
+        @input-updated="update_location($event)"
+      >
+        <LocationsList :places="location_data" :full-view="true" />
       </BookingPopup>
     </div>
     <div class="field-wrapper has-selection-box date d-flex justify-content-between">
@@ -141,7 +144,7 @@
         </svg>
       </span>
       <input
-        v-model="total_guests"
+        v-model="guests"
         type="text"
         class="trigger-selection"
         name="guests"
@@ -149,7 +152,7 @@
         readonly
       />
       <BookingPopup title="Select Guests" :dismiss-button="true">
-        <GuestsWidget />
+        <GuestsWidget @updated="update_guests($event)" />
       </BookingPopup>
     </div>
     <div class="field-wrapper submit">
@@ -180,8 +183,9 @@
 <script>
 import BookingPopup from "./Popup.vue";
 import LocationsList from "./LocationsList.vue";
-import Locations from "@/data/locations.json";
 import GuestsWidget from "./GuestsWidget.vue";
+
+import Locations from "@/data/locations.json";
 
 export default {
   name: "BookingForm",
@@ -192,54 +196,32 @@ export default {
   },
   data() {
     return {
-      place: "",
-      locations: [],
-      search: {
-        input_holder: "",
+      location: {
+        entry: "",
         loading: false,
-        arrival: "",
-        departure: "",
-        guests: {
-          adults: 0,
-          children: 0,
-          pets: false,
-        },
-        matched: [],
-        records: [],
       },
+      guests: "",
+      location_data: [],
+      filtered_locations: [],
     };
   },
-  computed: {
-    total_guests() {
-      // Nothing goes on whithout adults.
-      if (this.search.guests.adults <= 0) return;
-
-      let _total_guests =
-        this.search.guests.adults + this.search.guests.children;
-      let _pets = this.search.guests.pets ? ", Pets" : "";
-
-      return `${_total_guests} Guests` + _pets;
-    },
-  },
   mounted() {
-    this.locations = Locations;
+    this.location_data = Locations;
   },
   methods: {
-    filter_location() {
-      this.search.loading = true;
-      let typed_location = this.search.input_holder;
-      let filtered_places = this.search.records.filter(place => {
-        return (
-          place.name.toLowerCase().search(typed_location.toLowerCase()) != -1
-        );
+    filter_locations(limit = 0) {
+      let { entry } = this.location,
+        data = this.location_data;
+      let result = data.filter(location => {
+        return location.name.toLowerCase().indexOf(entry.toLowerCase()) != -1;
       });
-      this.search.matched = filtered_places.splice(4, filtered_places.length);
-      setTimeout(() => {
-        this.search.loading = false;
-      }, 500);
+      return limit > 0 ? result.slice(0, limit) : result;
     },
-    select_place(place) {
-      this.search.input_holder = place;
+    update_location(name) {
+      this.location.entry = name;
+    },
+    update_guests(guests) {
+      this.guests = guests;
     },
   },
 };

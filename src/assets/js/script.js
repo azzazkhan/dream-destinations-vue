@@ -2,11 +2,11 @@ import jQuery from "jquery";
 
 jQuery(document).ready($ => {
   {
-    let _hamburger = $(".hamburger").eq(0);
-    let _nav = $(".navigation-wrapper").eq(0);
-    let _nav_opened = false;
     // TODO: Implement navigation visibility bug after resizing window
     $(window).resize({}, () => {
+      // let _hamburger = $(".hamburger").eq(0);
+      // let _nav = $(".navigation-wrapper").eq(0);
+      // let _nav_opened = false;
       // let _desktop =
       // 	_hamburger.css('display') == 'none' ? true : false
       // console.log(_desktop ? 'Desktop' : 'Mobile')
@@ -84,45 +84,12 @@ jQuery(document).ready($ => {
       });
     });
   }
-  // Hero selection box.
-  $(".has-selection-box").each((_index, _el) => {
-    _el = $(_el);
-    let _s_box = _el.find(".selection-box");
-    _el.find("input.trigger-select-box").on("click", _e => {
-      _e.preventDefault();
-      if (!_s_box.hasClass("opened")) _s_box.addClass("opened");
-      // _s_box.toggleClass('opened')
-    });
-    _el.find(".selection-box .dismiss-selection").on("click", _e => {
-      _e.preventDefault();
-      setTimeout(() => {
-        _s_box.removeClass("opened");
-      }, 50);
-    });
-  });
   // Footer newsletter form
   $("#newsletter_form").on("submit", _e => {
     _e.preventDefault();
     alert("Email registered!");
     $("#user_email_response").val("");
   });
-  // Slider
-  {
-    let _card_slider = $(".card-slider");
-    _card_slider.owlCarousel({
-      autoWidth: true,
-      checkVisible: false,
-      rewind: false,
-      nav: true,
-      dots: false,
-      margin: 35,
-    });
-    _card_slider
-      .find(".owl-nav button")
-      .html(
-        '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 11H6.83L10.41 7.41L9 6L3 12L9 18L10.41 16.59L6.83 13H21V11Z" fill="black" /></svg>',
-      );
-  }
   $(window).on("keyup", _e => {
     let _key = _e.which;
     // let _name = _e.key.toLowerCase();

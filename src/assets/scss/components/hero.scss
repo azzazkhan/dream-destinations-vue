@@ -2,6 +2,7 @@
 @import "../mixins";
 
 .hero {
+  position: relative;
   background-image: url("../../img/hero.jpg");
   background-size: cover;
   background-position: center;
@@ -13,8 +14,7 @@
   @include breakpoint(lg) {
     min-height: 90vh;
   }
-  .featured-text {
-    font-family: get-font(hero-title);
+  .featured-title {
     font-size: 48px;
     line-height: 2.2rem;
     margin-bottom: 30px;

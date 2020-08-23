@@ -1,21 +1,20 @@
 <template>
-  <section
-    class="hero d-flex flex-column justify-content-center align-items-center"
-  >
-    <h1 class="featured-text text-white text-center">Find dream vacation</h1>
-    <BookingForm />
+  <section class="hero d-flex flex-column justify-content-center align-items-center">
+    <slot>
+      <ScrollToContentWidget />
+    </slot>
   </section>
 </template>
 
 <script>
-  import BookingForm from "@/components/Booking/Form";
+import ScrollToContentWidget from "./ScrollToConentWidget.vue";
 
-  export default {
-    name: "Hero",
-    components: {
-      BookingForm,
-    },
-  };
+export default {
+  name: "Hero",
+  components: {
+    ScrollToContentWidget,
+  },
+};
 </script>
 
 <style scoped lang="scss" src="@/assets/scss/components/hero.scss"></style>

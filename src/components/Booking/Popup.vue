@@ -39,7 +39,7 @@
       </slot>
       <button
         v-if="dismissButton"
-        class="custom-btn blue continue dismiss-selection w-75 mx-auto mt-3"
+        class="custom-btn blue continue dismiss-selection w-75 mx-auto my-3"
       >Continue</button>
     </div>
   </div>
@@ -79,7 +79,7 @@ export default {
   },
   watch: {
     entry(updated) {
-      this.$emit("inputUpdated", updated);
+      this.$emit("input-updated", this.entry);
     },
   },
   computed: {
@@ -95,40 +95,6 @@ export default {
     },
     has_input_box() {
       return this.input && (typeof this.input).toLowerCase() == "object";
-    },
-  },
-  methods: {
-    filter_location() {
-      this.search.loading = true;
-      let typed_location = this.search.input_holder;
-      let filtered_places = this.search.records.filter(place => {
-        return (
-          place.name.toLowerCase().search(typed_location.toLowerCase()) != -1
-        );
-      });
-      this.search.matched = filtered_places.splice(4, filtered_places.length);
-      setTimeout(() => {
-        this.search.loading = false;
-      }, 500);
-    },
-    add_adult() {
-      if (this.search.guests.adults >= 20) return;
-      this.search.guests.adults++;
-    },
-    remove_adult() {
-      if (this.search.guests.adults < 1) this.search.guests.adults = 1;
-      this.search.guests.adults--;
-    },
-    add_child() {
-      if (this.search.guests.children >= 20) return;
-      this.search.guests.children++;
-    },
-    remove_child() {
-      if (this.search.guests.children < 1) this.search.guests.children = 1;
-      this.search.guests.children--;
-    },
-    select_place(place) {
-      this.search.input_holder = place;
     },
   },
 };

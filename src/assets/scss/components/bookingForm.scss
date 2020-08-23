@@ -32,15 +32,12 @@
         min-width: 100px;
         max-width: 150px;
       }
-      &.submit {
-        width: 200px;
-      }
     }
     .icon {
       position: absolute;
       top: calc(50% - 1px);
-      left: 5px;
-      transform: translateY(-50%) scale(0.8);
+      left: 7.5px;
+      transform: translateY(-50%);
       svg {
         stroke-width: 1.5px;
         stroke: #717171;
@@ -55,7 +52,7 @@
       line-height: get-size(hero-input, height);
       height: get-size(hero-input, height);
       width: 100%;
-      padding: 15px 15px 15px 30px;
+      padding: 15px 15px 15px 35px;
       border: 1px solid #ddddde;
       border-radius: 4px;
       transition: box-shadow 0.2s ease;
@@ -91,6 +88,8 @@
       }
       @include breakpoint(lg) {
         margin-top: 0;
+        margin-left: 10px;
+        width: 180px;
       }
     }
   }

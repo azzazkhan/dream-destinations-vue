@@ -23,7 +23,7 @@
           <li class="menu-item">
             <router-link to="/about">About Us</router-link>
           </li>
-          <li class="menu-item has-children">
+          <li class="menu-item">
             <a href="javascript:void(0)" class="has-icon">
               <svg
                 focusable="false"
@@ -43,20 +43,6 @@
               </svg>
               Login
             </a>
-            <ul class="sub-menu">
-              <li class="menu-item">
-                <a
-                  href="javascript:void(0)"
-                  onclick="_openModal('javascript:void(0)login_modal_1')"
-                >Traveler Login</a>
-              </li>
-              <li class="menu-item">
-                <a
-                  href="javascript:void(0)"
-                  onclick="_openModal('javascript:void(0)login_modal_1')"
-                >Owner Login</a>
-              </li>
-            </ul>
           </li>
           <li class="menu-item">
             <a href="javascript:void(0)" class="has-icon">
@@ -108,12 +94,6 @@
             <ul class="sub-menu">
               <li class="menu-item">
                 <router-link to="/help?topic=traveler">Traveler Help</router-link>
-              </li>
-              <li class="menu-item">
-                <router-link to="/help?topic=owner">Owner Help</router-link>
-              </li>
-              <li class="menu-item">
-                <router-link to="/help?topic=property_manager">Property Manager Help</router-link>
               </li>
               <li class="menu-item">
                 <router-link to="/trust">Trust & Safety</router-link>

@@ -2,7 +2,7 @@
 @import "../mixins";
 
 .custom-btn {
-  color: white;
+  color: white !important;
   cursor: pointer;
   background-color: get-color(primary);
   font-weight: 500;
@@ -28,6 +28,14 @@
   }
   &:focus {
     box-shadow: 0 0 0 2px white, 0 0 0 4px get-color(primary);
+    @include breakpoint(lg) {
+      box-shadow: none;
+    }
+  }
+  @include breakpoint(lg) {
+    &:hover {
+      box-shadow: 0 0 0 2px white, 0 0 0 4px get-color(primary);
+    }
   }
   .icon {
     display: inline-block;

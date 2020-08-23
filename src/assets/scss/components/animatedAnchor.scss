@@ -1,11 +1,10 @@
-a.animated-link {
+a.animated-anchor {
   &,
   &:hover,
   &:active,
   &:visited,
   &:focus {
     position: relative;
-    color: #ffffff;
     text-decoration: none;
     transition: all 0.1s ease;
   }
@@ -15,7 +14,7 @@ a.animated-link {
       content: "";
       position: absolute;
       left: 0;
-      background-color: #ffffff;
+      background-color: currentColor;
       bottom: -2px;
       display: block;
       height: 1px;

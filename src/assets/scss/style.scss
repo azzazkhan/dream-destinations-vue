@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Lato:400,bold|Open+Sans:300|Lobster");
+@import url("https://fonts.googleapis.com/css?family=Lato:400,bold|Open+Sans:300,600|Lobster");
 @import "~bootstrap/scss/bootstrap";
 @import "~owl.carousel/src/scss/owl.carousel";
 @import "~owl.carousel/src/scss/owl.theme.default";
@@ -37,3 +37,9 @@ a {
     text-decoration: none;
   }
 }
+
+.featured-title {
+  font-family: get-font(featured);
+}
+
+@import "./components/animatedAnchor.scss";

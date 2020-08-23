@@ -2,24 +2,28 @@
   <div class="pt-lg-4 px-lg-2">
     <BookingGuestsWidgetCounter
       :data="{
+      count: adults,
       single: 'adult',
       multiple: 'adults',
       max: 20,
     }"
+      @updated="update_adults($event)"
     />
     <BookingGuestsWidgetCounter
       :data="{
+      count: children,
       single: 'child',
       multiple: 'children',
       max: 20,
     }"
+      @updated="update_children($event)"
     />
-    <BookingGuestsWidgetToggle title="Pets" />
+    <BookingGuestsWidgetToggle title="Pets" :data="{toggled: pets}" @updated="update_pets($event)" />
     <p
       class="my-3 mx-0 text-center"
       :class="{invisible: !pets}"
       style="font-size: 14px;"
-    >Only hotels that allow pets will be shown</p>
+    >Only hotels that allow Shaheer will be shown</p>
   </div>
 </template>
 
@@ -35,25 +39,36 @@ export default {
   },
   data() {
     return {
+      adults: 0,
+      children: 0,
       pets: false,
     };
   },
+  computed: {
+    guests() {
+      // Nothing goes on whithout adults.
+      if (this.adults <= 0) return;
+
+      return (
+        `${this.adults + this.children} Guests` + (this.pets ? ", Shaheer" : "")
+      );
+    },
+  },
   methods: {
-    add_adult() {
-      if (this.adults >= 20) return;
-      this.adults++;
+    update_adults(count) {
+      this.adults = count;
+      this.notify_guests();
     },
-    remove_adult() {
-      if (this.adults < 1) this.adults = 1;
-      this.adults--;
+    update_children(count) {
+      this.children = count;
+      this.notify_guests();
     },
-    add_child() {
-      if (this.children >= 20) return;
-      this.children++;
+    update_pets(is_allowed) {
+      this.pets = is_allowed;
+      this.notify_guests();
     },
-    remove_child() {
-      if (this.children < 1) this.children = 1;
-      this.children--;
+    notify_guests() {
+      this.$emit("updated", this.guests);
     },
   },
 };

@@ -1,0 +1,18 @@
+@import "../mixins";
+
+a {
+  position: absolute;
+  display: block;
+  height: 60px;
+  width: 60px;
+  background: url("../../img/down-chevron.gif") no-repeat center;
+  background-size: 100px;
+  bottom: 50px;
+  &.invert {
+    filter: invert(90);
+  }
+  @include breakpoint(lg) {
+    bottom: 80px;
+    background-size: 120px;
+  }
+}

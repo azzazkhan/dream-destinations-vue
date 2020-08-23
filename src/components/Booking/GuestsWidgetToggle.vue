@@ -5,13 +5,13 @@
       <button
         class="text"
         :class="{ active: defaults.toggled }"
-        @click="defaults.toggled = true"
+        @click="toggle()"
         v-text="defaults.on"
       ></button>
       <button
         class="text"
         :class="{ active: !defaults.toggled }"
-        @click="defaults.toggled = false"
+        @click="untoggle()"
         v-text="defaults.off"
       ></button>
     </div>
@@ -23,6 +23,7 @@ export default {
   name: "BookingGuestsWidgetToggle",
   props: {
     title: String,
+    data: Object,
   },
   data() {
     return {
@@ -49,6 +50,17 @@ export default {
             defaults[key] = data[key];
         });
       }
+    },
+    toggle() {
+      this.defaults.toggled = true;
+      this.notify_parent();
+    },
+    untoggle() {
+      this.defaults.toggled = false;
+      this.notify_parent();
+    },
+    notify_parent() {
+      this.$emit("updated", this.defaults.toggled);
     },
   },
 };

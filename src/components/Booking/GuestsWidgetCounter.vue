@@ -75,12 +75,17 @@ export default {
       let { count, max } = this.defaults;
       if (count >= max) this.defaults.count = max;
       else this.defaults.count++;
+      this.notify_parent();
     },
     remove() {
       let { count, min, negative } = this.defaults;
       if (!negative && count <= 0) this.defaults.count = 0;
       else if (count <= min) this.defaults.count = min;
       else this.defaults.count--;
+      this.notify_parent();
+    },
+    notify_parent() {
+      this.$emit("updated", this.defaults.count);
     },
     merge_defaults() {
       let defaults = this.defaults,
