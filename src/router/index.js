@@ -10,12 +10,23 @@ const routes = [
     name: "Home",
     component: Home,
   },
-  // {
-  // 	path: '/about',
-  // 	name: 'About',
-  // 	component: () =>
-  // 		import(/* webpackChunkName: "about" */ '../views/About.vue'),
-  // },
+  {
+    path: "/about",
+    name: "About",
+    component: () =>
+      import(/* webpackChunkName: "About" */ "../views/About.vue"),
+  },
+  {
+    path: "/:category/all",
+    name: "Category",
+    component: () =>
+      import(/* webpackChunkName: "Category" */ "../views/Category.vue"),
+  },
+  {
+    path: "/help",
+    name: "Help",
+    component: () => import(/* webpackChunkName: "Help" */ "../views/Help.vue"),
+  },
 ];
 
 const router = new VueRouter({

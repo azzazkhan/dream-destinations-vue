@@ -1,21 +1,22 @@
 <template>
   <a
-    href="javascript:void(0)"
+    href="#main"
     class="ScrollToContentWidgetComponent"
     :class="{ invert: invert }"
+    data-scroll="smooth"
   ></a>
 </template>
 
 <script>
-  export default {
-    name: "ScrollToContentWidget",
-    props: {
-      invert: {
-        type: Boolean,
-        default: false,
-      },
+export default {
+  name: "ScrollToContentWidget",
+  props: {
+    invert: {
+      type: Boolean,
+      default: false,
     },
-  };
+  },
+};
 </script>
 
 <style

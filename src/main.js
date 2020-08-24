@@ -13,9 +13,6 @@ import "./assets/fonts/fontawesome-webfont.woff";
 import "./assets/fonts/fontawesome-webfont.woff2";
 import "./assets/fonts/FontAwesome.otf";
 
-// Slider images
-import "./assets/img/slider-1.jpg";
-
 // Importing CSS
 import "./assets/scss/style.scss";
 

@@ -1,68 +1,45 @@
 [
   {
-    "title": "Lorem Condom Dolor Pussy",
-    "tags": ["Lorem", "Ipsum", "Dolor"],
-    "image": "slider-1.jpg",
-    "permalink": "lorem-ipsum-location"
+    "title": "Boats",
+    "tags": ["Boat", "Ocean", "Luxury"],
+    "image": "boats/boat-in-lake-powell.jpg",
+    "image_position": "right",
+    "permalink": "boats"
   },
   {
-    "title": "Lorem Condom Dolor Pussy",
-    "tags": ["Lorem", "Ipsum", "Dolor"],
-    "image": "slider-1.jpg",
-    "permalink": "lorem-ipsum-location"
+    "title": "Villas",
+    "tags": ["Villa", "Luxury", "Vallarta"],
+    "image": "villas/vacation-rental-villas-in-puerto-vallarta.jpg",
+    "permalink": "villas"
   },
   {
-    "title": "Lorem Condom Dolor Pussy",
-    "tags": ["Lorem", "Ipsum", "Dolor"],
-    "image": "slider-1.jpg",
-    "permalink": "lorem-ipsum-location"
+    "title": "Yatchs",
+    "tags": ["Yatch", "Luxury", "High Class"],
+    "image": "yatchs/fincantieri-yacht.jpg",
+    "permalink": "yatchs"
   },
   {
-    "title": "Lorem Condom Dolor Pussy",
+    "title": "Resorts",
     "tags": ["Lorem", "Ipsum", "Dolor"],
-    "image": "slider-1.jpg",
-    "permalink": "lorem-ipsum-location"
+    "image": "resorts/warwick-resorts.jpg",
+    "permalink": "resorts"
   },
   {
-    "title": "Lorem Condom Dolor Pussy",
+    "title": "Lodges",
     "tags": ["Lorem", "Ipsum", "Dolor"],
-    "image": "slider-1.jpg",
-    "permalink": "lorem-ipsum-location"
+    "image": "lodges/lodge-holidays-and-luxury-lodge-breaks-in-uk.jpg",
+    "permalink": "lodges"
   },
   {
-    "title": "Lorem Condom Dolor Pussy",
-    "tags": ["Lorem", "Ipsum", "Dolor"],
-    "image": "slider-1.jpg",
-    "permalink": "lorem-ipsum-location"
+    "title": "Hotels",
+    "tags": ["Hotels", "Five Star", "Dolor"],
+    "image": "hotels/cairo-pyramid-hotel.jpg",
+    "permalink": "hotels"
   },
   {
-    "title": "Lorem Condom Dolor Pussy",
-    "tags": ["Lorem", "Ipsum", "Dolor"],
-    "image": "slider-1.jpg",
-    "permalink": "lorem-ipsum-location"
-  },
-  {
-    "title": "Lorem Condom Dolor Pussy",
-    "tags": ["Lorem", "Ipsum", "Dolor"],
-    "image": "slider-1.jpg",
-    "permalink": "lorem-ipsum-location"
-  },
-  {
-    "title": "Lorem Condom Dolor Pussy",
-    "tags": ["Lorem", "Ipsum", "Dolor"],
-    "image": "slider-1.jpg",
-    "permalink": "lorem-ipsum-location"
-  },
-  {
-    "title": "Lorem Condom Dolor Pussy",
-    "tags": ["Lorem", "Ipsum", "Dolor"],
-    "image": "slider-1.jpg",
-    "permalink": "lorem-ipsum-location"
-  },
-  {
-    "title": "Lorem Condom Dolor Pussy",
-    "tags": ["Lorem", "Ipsum", "Dolor"],
-    "image": "slider-1.jpg",
-    "permalink": "lorem-ipsum-location"
+    "title": "Castles",
+    "tags": ["Castle", "Fairytale", "Disney"],
+    "image": "castles/fairytale-castle-in-germany.jpg",
+    "permalink": "castles"
   }
 ]

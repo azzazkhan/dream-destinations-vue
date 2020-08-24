@@ -1,17 +1,14 @@
 <template>
   <div class="CardsSliderComponent slider-wrapper">
     <div class="owl-carousel card-slider">
-      <div
-        v-for="(card, index) in cards"
-        :key="index"
-        class="card bg-mask bg-zoom bg-blur hard"
-      >
+      <div v-for="(card, index) in cards" :key="index" class="card bg-mask bg-zoom bg-blur hard">
         <div
           v-if="card.image"
           class="background"
           :style="{
             'background-image':
               'url(\'' + require(`@/assets/img/${card.image}`) + '\')',
+            'background-position': card.image_position ? card.image_position : 'center',
           }"
         ></div>
         <div class="content">
@@ -28,17 +25,13 @@
             v-text="card.title ? card.title : 'Lorem ipsum dolor set amet'"
           ></h2>
           <a
-            :href="card.permalink ? card.permalink : 'javascript:void(0)'"
+            :href="card.permalink ? `/${card.permalink}/all` : 'javascript:void(0)'"
             class="btn-explore"
-            >Explore</a
-          >
+          >Explore</a>
         </div>
       </div>
     </div>
-    <a
-      :href="customButton.url"
-      class="custom-btn inline text-capitalize mt-4 mb-2"
-    >
+    <a :href="customButton.url" class="custom-btn inline text-capitalize mt-4 mb-2">
       {{ customButton.text }}
       <div class="icon position-relative" style="margin-left: 5px; top: -9px;">
         <svg
@@ -61,26 +54,28 @@
 </template>
 
 <script>
-  import "@/assets/js/cardsSlider.js";
+import "@/assets/js/cardsSlider.js";
+import Cards from "@/data/cards.json";
 
-  export default {
-    name: "CardsSlider",
-    props: {
-      customButton: {
-        type: Object,
-        default: function() {
-          return {
-            url: "javascript:void(0)",
-            text: "View More Locations",
-          };
-        },
-      },
-      cards: {
-        type: Array,
-        required: true,
+export default {
+  name: "CardsSlider",
+  props: {
+    customButton: {
+      type: Object,
+      default: function() {
+        return {
+          url: "javascript:void(0)",
+          text: "View More Locations",
+        };
       },
     },
-  };
+  },
+  data() {
+    return {
+      cards: Cards,
+    };
+  },
+};
 </script>
 
 <style
