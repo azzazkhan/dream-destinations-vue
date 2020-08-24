@@ -19,23 +19,28 @@
             />
           </svg>
         </span>
-        <h3
-          class="font-weight-normal text-white"
-          style="line-height: 1.5em"
-        >Login or sign up on Dream Destinations</h3>
+        <h3 class="font-weight-normal text-white" style="line-height: 1.5em">
+          Login or sign up on Dream Destinations
+        </h3>
       </div>
       <div class="content-wrapper animated-content">
         <div class="animation-wrapper">
           <div class="content">
             <div class="form">
               <div class="form-field">
-                <input type="email" v-model="email" placeholder="Email address" />
+                <input
+                  v-model="email"
+                  type="email"
+                  placeholder="Email address"
+                />
               </div>
             </div>
             <button
               class="custom-btn animation-control forward"
               :disabled="!validate_email()"
-            >Get Started</button>
+            >
+              Get Started
+            </button>
             <span class="text-muted text-center d-block">or continue with</span>
             <div class="social-login">
               <div class="login apple">
@@ -156,37 +161,48 @@
               <a
                 href="javascript:void(0)"
                 class="animated-anchor animation-control backward"
-              >Edit email</a>
+                >Edit email</a
+              >
             </div>
             <div class="form">
               <div class="form-field">
-                <input type="text" v-bind="first_name" placeholder="First Name" />
+                <input
+                  type="text"
+                  v-bind="first_name"
+                  placeholder="First Name"
+                />
               </div>
               <div class="form-field">
                 <input type="text" v-bind="last_name" placeholder="Last Name" />
               </div>
               <div class="form-field password-widget">
-                <input type="password" v-bind="password" placeholder="Password" />
+                <input
+                  type="password"
+                  v-bind="password"
+                  placeholder="Password"
+                />
                 <div class="icon">
                   <i class="fa fa-eye show" aria-hidden="true"></i>
                   <i class="fa fa-eye-slash hide" aria-hidden="true"></i>
                 </div>
               </div>
             </div>
-            <button class="custom-btn animation-control forward">Get Started</button>
+            <button class="custom-btn animation-control forward">
+              Get Started
+            </button>
           </div>
         </div>
         <div class="footer text-muted text-center mx-auto px-3">
           <span class="notice">
-            Use of this web site constitutes acceptance of the Dream Destinations
-            <a
-              href="javascript:void(0)"
-            >Terms and Conditions</a> and
+            Use of this web site constitutes acceptance of the Dream
+            Destinations
+            <a href="javascript:void(0)">Terms and Conditions</a> and
             <a href="javascript:void(0)">Privacy Policy</a>.
           </span>
-          <span
-            class="d-block mt-4"
-          >&copy; {{ new Date().getFullYear() }} Dream Destinations &mdash; All rights reserved</span>
+          <span class="d-block mt-4"
+            >&copy; {{ new Date().getFullYear() }} Dream Destinations &mdash;
+            All rights reserved</span
+          >
         </div>
       </div>
     </div>
@@ -194,30 +210,26 @@
 </template>
 
 <script>
-import "@/assets/js/authModel.js";
+  import "@/assets/js/authModel.js";
 
-export default {
-  name: "AuthModel",
-  data() {
-    return {
-      email: "",
-      first_name: "",
-      last_name: "",
-      password: "",
-    };
-  },
-  methods: {
-    validate_email() {
-      // let regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-      let regex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
-      return this.email.match(regex);
+  export default {
+    name: "AuthModel",
+    data() {
+      return {
+        email: "",
+        first_name: "",
+        last_name: "",
+        password: "",
+      };
     },
-  },
-};
+    methods: {
+      validate_email() {
+        // let regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        let regex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+        return this.email.match(regex);
+      },
+    },
+  };
 </script>
 
-<style
-  scoped
-  lang="scss"
-  src="@/assets/scss/components/authModel.scss"
-></style>
+<style scoped lang="scss" src="@/assets/scss/components/authModel.scss"></style>

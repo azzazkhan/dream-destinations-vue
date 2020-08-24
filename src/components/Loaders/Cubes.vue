@@ -15,9 +15,9 @@
 </template>
 
 <script>
-export default {
-  name: "CubesLoader",
-};
+  export default {
+    name: "CubesLoader",
+  };
 </script>
 
 <style

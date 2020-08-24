@@ -2,13 +2,13 @@
   <div class="BookingLocationItemComponent place dismiss-selection">
     <span class="icon">
       <svg
+        v-if="place.type.toLowerCase() == 'airport'"
         focusable="false"
         data-id="SVG_PLANE__16"
         xmlns="http://www.w3.org/2000/svg"
         width="16"
         height="16"
         viewBox="0 0 16 16"
-        v-if="place.type.toLowerCase() == 'airport'"
       >
         <g fill="none" stroke-linecap="round" stroke-linejoin="round">
           <path
@@ -20,12 +20,12 @@
         </g>
       </svg>
       <svg
+        v-if="place.type.toLowerCase() == 'city'"
         focusable="false"
         data-id="SVG_CITY__16"
         width="16"
         height="16"
         viewBox="0 0 16 16"
-        v-if="place.type.toLowerCase() == 'city'"
       >
         <g fill="none" stroke-linecap="round" stroke-linejoin="round">
           <path
@@ -35,16 +35,20 @@
         </g>
       </svg>
       <svg
+        v-if="place.type.toLowerCase() == 'landmark'"
         focusable="false"
         data-id="SVG_CAMERA__16"
         xmlns="http://www.w3.org/2000/svg"
         width="16"
         height="16"
         viewBox="0 0 16 16"
-        v-if="place.type.toLowerCase() == 'landmark'"
       >
         <g fill="none" fill-rule="evenodd">
-          <path fill="currentColor" stroke="none" d="M12 6.9a.9.9 0 1 1 1.8 0 .9.9 0 0 1-1.8 0" />
+          <path
+            fill="currentColor"
+            stroke="none"
+            d="M12 6.9a.9.9 0 1 1 1.8 0 .9.9 0 0 1-1.8 0"
+          />
           <path
             stroke-linecap="round"
             stroke-linejoin="round"
@@ -58,15 +62,17 @@
         </g>
       </svg>
       <svg
+        v-if="place.type.toLowerCase() == 'region'"
         focusable="false"
         data-id="SVG_GLOBE__16"
         width="16px"
         height="16px"
         viewBox="0 0 16 16"
-        v-if="place.type.toLowerCase() == 'region'"
       >
         <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zM1.4 10.33h13.2M1.4 5.67h13.2" />
+          <path
+            d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zM1.4 10.33h13.2M1.4 5.67h13.2"
+          />
           <path
             d="M6.62 14.63c-.77-1.35-1.29-3.79-1.29-6.58s.52-5.23 1.3-6.58M9.38 1.47c.77 1.35 1.29 3.79 1.29 6.58 0 2.8-.52 5.23-1.3 6.58"
           />
@@ -80,23 +86,23 @@
 </template>
 
 <script>
-export default {
-  name: "BookingLocationItem",
-  props: {
-    place: {
-      type: Object,
-      required: true,
+  export default {
+    name: "BookingLocationItem",
+    props: {
+      place: {
+        type: Object,
+        required: true,
+      },
     },
-  },
-  mounted() {
-    if (this.place && (typeof this.place).toLowerCase() == "object") {
-      if (!this.place.location || !this.place.type)
-        console.error(
-          "Invalid place passed to <BookingLocationItem> component!",
-        );
-    }
-  },
-};
+    mounted() {
+      if (this.place && (typeof this.place).toLowerCase() == "object") {
+        if (!this.place.location || !this.place.type)
+          console.error(
+            "Invalid place passed to <BookingLocationItem> component!",
+          );
+      }
+    },
+  };
 </script>
 
 <style

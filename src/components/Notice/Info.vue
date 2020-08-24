@@ -10,7 +10,11 @@
         viewBox="0 0 24 24"
       >
         <g fill="none" fill-rule="evenodd">
-          <path fill="currentColor" stroke="none" d="M11 8a1 1 0 1 1 2 0 1 1 0 0 1-2 0" />
+          <path
+            fill="currentColor"
+            stroke="none"
+            d="M11 8a1 1 0 1 1 2 0 1 1 0 0 1-2 0"
+          />
           <path
             stroke-linecap="round"
             stroke-linejoin="round"
@@ -24,9 +28,13 @@
 </template>
 
 <script>
-export default {
-  name: "InfoNotice",
-};
+  export default {
+    name: "InfoNotice",
+  };
 </script>
 
-<style scoped lang="scss" src="@/assets/scss/components/infoNotice.scss"></style>
+<style
+  scoped
+  lang="scss"
+  src="@/assets/scss/components/infoNotice.scss"
+></style>

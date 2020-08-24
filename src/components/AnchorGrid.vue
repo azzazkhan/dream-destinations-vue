@@ -6,22 +6,29 @@
     </p>
     <ul v-if="links" class="links">
       <li v-for="(link, index) in links" :key="index">
-        <a :href="link.url ? link.url : 'javascript:void(0)'" v-text="link.text"></a>
+        <a
+          :href="link.url ? link.url : 'javascript:void(0)'"
+          v-text="link.text"
+        ></a>
       </li>
     </ul>
   </div>
 </template>
 
 <script>
-export default {
-  name: "AnchorGrid",
-  props: {
-    links: {
-      type: Array,
-      required: true,
+  export default {
+    name: "AnchorGrid",
+    props: {
+      links: {
+        type: Array,
+        required: true,
+      },
     },
-  },
-};
+  };
 </script>
 
-<style scoped lang="scss" src="@/assets/scss/components/anchorGrid.scss"></style>
+<style
+  scoped
+  lang="scss"
+  src="@/assets/scss/components/anchorGrid.scss"
+></style>

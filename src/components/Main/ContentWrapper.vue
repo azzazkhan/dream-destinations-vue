@@ -5,7 +5,7 @@
 </template>
 
 <script>
-export default {
-  name: "MainContentWrapper",
-};
+  export default {
+    name: "MainContentWrapper",
+  };
 </script>

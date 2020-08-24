@@ -1,13 +1,18 @@
 <template>
   <div class="CardsSliderComponent slider-wrapper">
     <div class="owl-carousel card-slider">
-      <div class="card bg-mask bg-zoom bg-blur hard" v-for="(card, index) in cards" :key="index">
+      <div
+        v-for="(card, index) in cards"
+        :key="index"
+        class="card bg-mask bg-zoom bg-blur hard"
+      >
         <div
-          class="background"
           v-if="card.image"
+          class="background"
           :style="{
-            'background-image': 'url(\'' + require(`@/assets/img/${card.image}`) + '\')'
-            }"
+            'background-image':
+              'url(\'' + require(`@/assets/img/${card.image}`) + '\')',
+          }"
         ></div>
         <div class="content">
           <div v-if="card.tags" class="tags fadeable">
@@ -25,11 +30,15 @@
           <a
             :href="card.permalink ? card.permalink : 'javascript:void(0)'"
             class="btn-explore"
-          >Explore</a>
+            >Explore</a
+          >
         </div>
       </div>
     </div>
-    <a :href="customButton.url" class="custom-btn inline text-capitalize mt-4 mb-2">
+    <a
+      :href="customButton.url"
+      class="custom-btn inline text-capitalize mt-4 mb-2"
+    >
       {{ customButton.text }}
       <div class="icon position-relative" style="margin-left: 5px; top: -9px;">
         <svg
@@ -52,26 +61,30 @@
 </template>
 
 <script>
-import "@/assets/js/cardsSlider.js";
+  import "@/assets/js/cardsSlider.js";
 
-export default {
-  name: "CardsSlider",
-  props: {
-    customButton: {
-      type: Object,
-      default: function() {
-        return {
-          url: "javascript:void(0)",
-          text: "View More Locations",
-        };
+  export default {
+    name: "CardsSlider",
+    props: {
+      customButton: {
+        type: Object,
+        default: function() {
+          return {
+            url: "javascript:void(0)",
+            text: "View More Locations",
+          };
+        },
+      },
+      cards: {
+        type: Array,
+        required: true,
       },
     },
-    cards: {
-      type: Array,
-      required: true,
-    },
-  },
-};
+  };
 </script>
 
-<style scoped lang="scss" src="@/assets/scss/components/cardsSlider.scss"></style>
+<style
+  scoped
+  lang="scss"
+  src="@/assets/scss/components/cardsSlider.scss"
+></style>

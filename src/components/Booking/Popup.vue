@@ -40,64 +40,66 @@
       <button
         v-if="dismissButton"
         class="custom-btn blue continue dismiss-selection w-75 mx-auto my-3"
-      >Continue</button>
+      >
+        Continue
+      </button>
     </div>
   </div>
 </template>
 
 <script>
-import "@/assets/js/bookingPopup.js";
+  import "@/assets/js/bookingPopup.js";
 
-import CubesLoader from "@/components/Loaders/Cubes.vue";
+  import CubesLoader from "@/components/Loaders/Cubes.vue";
 
-export default {
-  name: "BookingPopup",
-  components: {
-    CubesLoader,
-  },
-  props: {
-    title: {
-      type: String,
-      default: "",
+  export default {
+    name: "BookingPopup",
+    components: {
+      CubesLoader,
     },
-    input: {
-      type: Object,
+    props: {
+      title: {
+        type: String,
+        default: "",
+      },
+      input: {
+        type: Object,
+      },
+      loading: {
+        type: Boolean,
+        default: false,
+      },
+      dismissButton: {
+        type: Boolean,
+        default: false,
+      },
     },
-    loading: {
-      type: Boolean,
-      default: false,
+    data() {
+      return {
+        entry: "",
+      };
     },
-    dismissButton: {
-      type: Boolean,
-      default: false,
-    },
-  },
-  data() {
-    return {
-      entry: "",
-    };
-  },
-  watch: {
-    entry(updated) {
-      this.$emit("input-updated", this.entry);
-    },
-  },
-  computed: {
-    total_guests() {
-      // Nothing goes on whithout adults.
-      if (this.search.guests.adults <= 0) return;
+    computed: {
+      total_guests() {
+        // Nothing goes on whithout adults.
+        if (this.search.guests.adults <= 0) return;
 
-      let _total_guests =
-        this.search.guests.adults + this.search.guests.children;
-      let _pets = this.search.guests.pets ? ", Pets" : "";
+        let _total_guests =
+          this.search.guests.adults + this.search.guests.children;
+        let _pets = this.search.guests.pets ? ", Pets" : "";
 
-      return `${_total_guests} Guests` + _pets;
+        return `${_total_guests} Guests` + _pets;
+      },
+      has_input_box() {
+        return this.input && (typeof this.input).toLowerCase() == "object";
+      },
     },
-    has_input_box() {
-      return this.input && (typeof this.input).toLowerCase() == "object";
+    watch: {
+      entry() {
+        this.$emit("input-updated", this.entry);
+      },
     },
-  },
-};
+  };
 </script>
 <style
   scoped

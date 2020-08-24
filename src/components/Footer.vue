@@ -1,12 +1,14 @@
 <template>
   <footer id="footer" class="FooterComponent">
     <div class="email-response">
-      <span class="description">Get special offers, travel inspirations, and much more!</span>
-      <form action="#" method="POST" id="newsletter_form">
+      <span class="description"
+        >Get special offers, travel inspirations, and much more!</span
+      >
+      <form id="newsletter_form" action="#" method="POST">
         <input
+          id="user_email_response"
           type="email"
           name="user_email"
-          id="user_email_response"
           required
           placeholder="Enter your email address"
           autocomplete="off"
@@ -16,7 +18,11 @@
     </div>
     <div class="logo-wrapper">
       <a href="javascript:void(0)" class="no-decoration">
-        <img src="@/assets/img/logo.svg" style="height: 48px;" alt="Image not available" />
+        <img
+          src="@/assets/img/logo.svg"
+          style="height: 48px;"
+          alt="Image not available"
+        />
       </a>
     </div>
     <div class="widgets-wrapper">
@@ -32,11 +38,17 @@
               target="_blank"
               class="email"
               title="Open the email app."
-            >contact@dreamdestinations.com</a>
+              >contact@dreamdestinations.com</a
+            >
             <br />
             <span>123 Lipsum St.South Concetur, CT 1234</span>
             <br />
-            <a href="tel:00910000000000" class="phone" title="Open the phone app.">+91 000-000-0000</a>
+            <a
+              href="tel:00910000000000"
+              class="phone"
+              title="Open the phone app."
+              >+91 000-000-0000</a
+            >
           </p>
         </div>
       </div>
@@ -86,7 +98,7 @@
         <h4 class="title mt-4">
           <label for="user_language_response">Languages</label>
         </h4>
-        <select name="user_language" id="user_language_response">
+        <select id="user_language_response" name="user_language">
           <option value="english" selected>ENG</option>
           <option value="urdu">URD</option>
           <option value="pushto">PUS</option>
@@ -98,22 +110,17 @@
     <div class="copyrights">
       &copy;
       <router-link class="no-active" to="/">Dream Destinations</router-link>
-      {{ new Date().getFullYear() }} &mdash;
-      All rights reserved
+      {{ new Date().getFullYear() }} &mdash; All rights reserved
     </div>
   </footer>
 </template>
 
 <script>
-import "@/assets/js/footer.js";
+  import "@/assets/js/footer.js";
 
-export default {
-  name: "Footer",
-};
+  export default {
+    name: "Footer",
+  };
 </script>
 
-<style
-  scoped
-  lang="scss"
-  src="@/assets/scss/components/footer.scss"
-></style>
+<style scoped lang="scss" src="@/assets/scss/components/footer.scss"></style>
