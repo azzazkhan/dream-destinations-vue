@@ -1,0 +1,258 @@
+@import "../variables";
+@import "../mixins";
+@import "./utils/animatedAnchor";
+
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow-y: auto;
+  z-index: get-index(auth-model);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  &.visible {
+    visibility: visible;
+    opacity: 1;
+  }
+  &.mask.black {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  &.mask.white {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+  &.mask.blur::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    backdrop-filter: blur(2px);
+    display: block;
+    z-index: -1;
+  }
+  .auth-modal {
+    height: 100%;
+    @include breakpoint(md) {
+      height: auto;
+      width: 480px;
+      margin: 10vh auto;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px -10px black;
+    }
+    @include breakpoint(lg) {
+      width: 420px;
+      margin: 5vh auto;
+    }
+    .header {
+      position: relative;
+      background-color: get-color(primary);
+      height: get-size(auth-modal-header, height);
+      padding: 50px 5% 0;
+      @include breakpoint(md) {
+        padding: 50px 7.5% 0;
+        border-radius: 10px 10px 0 0;
+      }
+      @include breakpoint(lg) {
+        padding: 50px 7.5% 0;
+        border-radius: 10px 10px 0 0;
+      }
+      .close-icon {
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.6);
+        cursor: pointer;
+        top: 15px;
+        right: 15px;
+        display: flex;
+        height: 40px;
+        width: 40px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        transition: background-color 0.2s ease;
+        &:active {
+          background-color: black;
+        }
+        svg {
+          stroke: white;
+          stroke-width: 2px;
+        }
+        @include breakpoint(md) {
+          &,
+          &:active {
+            background: transparent;
+          }
+        }
+      }
+    }
+    .content-wrapper {
+      background-color: get-color(faded);
+      min-height: calc(100% - get-size(auth-modal-header, height));
+      @include breakpoint(md) {
+        min-height: unset;
+        border-radius: 0 0 10px 10px;
+      }
+      .animation-wrapper {
+        background-color: get-color(background);
+        width: 95%;
+        min-height: 200px;
+        margin: 0 auto;
+        padding: 20px 0 30px;
+        border-radius: 4px;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+        transform: translateY(get-size(auth-modal-content, translateY));
+        @include breakpoint(md) {
+          width: 85%;
+        }
+        .content {
+          opacity: 1;
+          padding-top: 20px;
+          transform: translateX(0);
+          transition: all 0.2s ease;
+          &.pending {
+            transform: translateX(30px);
+            opacity: 0;
+          }
+          &.toggled {
+            transform: translateX(-30px);
+            opacity: 0;
+          }
+          .form {
+            width: 90%;
+            margin: 0 auto;
+            @include breakpoint(md) {
+              width: 80%;
+            }
+            .form-field {
+              margin-bottom: 10px;
+              &:last-of-type {
+                margin: 0;
+              }
+              input {
+                font-size: get-font-size(input);
+                line-height: get-size(auth-modal-input, height);
+                vertical-align: middle;
+                height: 48px;
+                width: 100%;
+                padding: 0 15px;
+                border-radius: 4px;
+                border: 1px solid #a0a0a0;
+                transition: border-color 0.2s ease, box-shadow 0.2s ease;
+                &:focus {
+                  border-color: transparent;
+                  box-shadow: 0 0 0 2px map-get($colors, primary);
+                }
+              }
+              &.password-widget {
+                position: relative;
+                .icon {
+                  position: absolute;
+                  top: 50%;
+                  right: 15px;
+                  transform: translateY(-50%);
+                  .fa {
+                    font-size: 18px;
+                    &.hide {
+                      display: none;
+                    }
+                  }
+                }
+                &.visible {
+                  .icon .fa {
+                    &.show {
+                      display: none !important;
+                    }
+                    &.hide {
+                      display: block !important;
+                    }
+                  }
+                }
+              }
+            }
+          }
+          .custom-btn {
+            width: 180px;
+            margin: 30px auto 20px;
+          }
+          .social-login {
+            margin: 15px 0 35px;
+            display: flex;
+            width: 90%;
+            justify-content: space-between;
+            margin: 30px auto 20px;
+            @include breakpoint(md) {
+              width: 70%;
+            }
+            .login {
+              cursor: pointer;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              &:hover {
+                &.apple .icon {
+                  background-color: #000000;
+                  box-shadow: 0 0 0 2px white, 0 0 0 4px #000000;
+                }
+                &.twitter .icon {
+                  background-color: #03a9f4;
+                  box-shadow: 0 0 0 2px white, 0 0 0 4px #03a9f4;
+                }
+                &.facebook .icon {
+                  background-color: #3b5999;
+                  box-shadow: 0 0 0 2px white, 0 0 0 4px #3b5999;
+                }
+                &.google .icon {
+                  box-shadow: 0 0 0 4px white,
+                    0 0 0 6px map-get($colors, primary);
+                }
+
+                &:not(.google) .icon svg {
+                  &,
+                  g,
+                  path {
+                    fill: white;
+                  }
+                }
+              }
+              &:active .icon {
+                transform: scale(0.8);
+              }
+              .icon {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 50px;
+                width: 50px;
+                margin-bottom: 5px;
+                border-radius: 50%;
+                box-shadow: 0 0 0 1px #ddddde;
+                transition: all 0.2s ease;
+                svg {
+                  transform: scale(0.9);
+                }
+              }
+              .label {
+                color: #717171;
+                font-size: 12px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .footer {
+    font-size: 12px;
+    transform: translateY(get-size(auth-modal-footer, translateY));
+    @include breakpoint(md) {
+      font-size: 14px;
+      width: 85%;
+    }
+    a {
+      @extend .animated-anchor;
+    }
+  }
+}

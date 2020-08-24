@@ -31,6 +31,14 @@ $xl: 1600px;
   }
 }
 
+@mixin placeholder {
+  &::-webkit-input-placeholder,
+  &::-moz-placeholder,
+  &:-ms-input-placeholder &:-moz-placeholder {
+    @content;
+  }
+}
+
 @mixin prefix($property, $value) {
   -webkit-#{$property}: $value;
   -moz-#{$property}: $value;

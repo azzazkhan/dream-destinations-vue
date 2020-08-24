@@ -1,5 +1,5 @@
 <template>
-  <div class="loader">
+  <div class="CubesLoaderComponent loader">
     <div class="sk-cube-grid">
       <div class="sk-cube sk-cube1"></div>
       <div class="sk-cube sk-cube2"></div>
@@ -15,9 +15,9 @@
 </template>
 
 <script>
-  export default {
-    name: "CubesLoader",
-  };
+export default {
+  name: "CubesLoader",
+};
 </script>
 
 <style

@@ -1,5 +1,5 @@
 <template>
-  <div class="selection-field">
+  <div class="BookingGuestsWidgetCounterComponent selection-field">
     <div class="description text-capitalize" v-text="count_text"></div>
     <div class="actions">
       <button class="minus" @click="remove()">
@@ -65,6 +65,7 @@ export default {
       else if (negative && count < 0) return `${count} ${multiple}`;
       else if (count == 1) return `${count} ${single}`;
       else if (count >= 2) return `${count} ${multiple}`;
+      else return "";
     },
   },
   mounted() {

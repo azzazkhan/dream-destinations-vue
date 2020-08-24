@@ -1,5 +1,3 @@
-@import "mixins";
-
 $z-index: (
   header: 2,
   header-navigation-overlay: 3,
@@ -7,6 +5,7 @@ $z-index: (
   header-hamburger: 5,
   booking-form-selection: 6,
   booking-form-loader: 7,
+  auth-model: 8,
 );
 
 $sizing: (
@@ -22,6 +21,18 @@ $sizing: (
   custom-button: (
     height: 48px,
   ),
+  auth-modal-header: (
+    height: 320px,
+  ),
+  auth-modal-content: (
+    translateY: -140px,
+  ),
+  auth-modal-footer: (
+    translateY: -80px,
+  ),
+  auth-modal-input: (
+    height: 48px,
+  ),
   booking-form-toggle-text-button: (
     height: 45px,
     width: 65px,
@@ -29,8 +40,9 @@ $sizing: (
 );
 
 $colors: (
+  primary-light: #0061df,
   primary: #245abc,
-  primary-dark: shade(#245abc, 50%),
+  primary-dark: #0c398d,
   background: white,
   faded: #f9f8f7,
   base-text: #1e1e1e,

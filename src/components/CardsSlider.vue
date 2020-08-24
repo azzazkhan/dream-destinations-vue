@@ -11,21 +11,25 @@
         ></div>
         <div class="content">
           <div v-if="card.tags" class="tags fadeable">
-            <a v-for="(tag, index) in card.tags" :key="index" href="#" v-text="card.tags[index]"></a>
+            <a
+              v-for="(tag, index) in card.tags"
+              :key="index"
+              href="javascript:void(0)"
+              v-text="card.tags[index]"
+            ></a>
           </div>
           <h2
             class="title fadeable"
             v-text="card.title ? card.title : 'Lorem ipsum dolor set amet'"
           ></h2>
-          <a href="javascript:void(0)" class="btn-explore">Explore</a>
+          <a
+            :href="card.permalink ? card.permalink : 'javascript:void(0)'"
+            class="btn-explore"
+          >Explore</a>
         </div>
       </div>
     </div>
-    <a
-      :href="customButton.url"
-      class="custom-btn inline text-capitalize"
-      style="margin: 25px 0 10px 10px;"
-    >
+    <a :href="customButton.url" class="custom-btn inline text-capitalize mt-4 mb-2">
       {{ customButton.text }}
       <div class="icon position-relative" style="margin-left: 5px; top: -9px;">
         <svg

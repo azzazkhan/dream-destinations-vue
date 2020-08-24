@@ -24,7 +24,7 @@
             <router-link to="/about">About Us</router-link>
           </li>
           <li class="menu-item">
-            <a href="javascript:void(0)" class="has-icon">
+            <a href="javascript:void(0)" class="has-icon modal-trigger" data-modal="AuthModel_01">
               <svg
                 focusable="false"
                 data-id="SVG_PERSON__24"
@@ -45,7 +45,7 @@
             </a>
           </li>
           <li class="menu-item">
-            <a href="javascript:void(0)" class="has-icon">
+            <a href="javascript:void(0)" class="has-icon modal-trigger" data-modal="AuthModel_01">
               <svg
                 focusable="false"
                 data-id="SVG_INVITE__24"

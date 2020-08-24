@@ -1,5 +1,5 @@
 <template>
-  <div class="selection-field">
+  <div class="BookingGuestsWidgetToggleComponent selection-field">
     <div class="description" v-text="heading"></div>
     <div class="actions">
       <button

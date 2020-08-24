@@ -16,7 +16,12 @@
           class="animated-anchor"
         >Visit our help article</a>
       </InfoNotice>
-      <CardsSlider :cards="cards" />
+      <CardsSlider :cards="cards" id="locationsSlider01" />
+      <AnchorGrid class="mt-5" :links="links">
+        <template
+          v-slot:description
+        >Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio deleniti expedita unde vel recusandae fuga ratione amet error neque commodi!</template>
+      </AnchorGrid>
     </MainContentWraper>
   </div>
 </template>
@@ -27,8 +32,10 @@ import BookingForm from "@/components/Booking/Form";
 import MainContentWraper from "@/components/Main/ContentWrapper.vue";
 import InfoNotice from "@/components/Notice/Info.vue";
 import CardsSlider from "@/components/CardsSlider.vue";
+import AnchorGrid from "@/components/AnchorGrid.vue";
 
 import Cards from "@/data/cards.json";
+import Links from "@/data/links.json";
 
 export default {
   name: "Home",
@@ -38,10 +45,12 @@ export default {
     MainContentWraper,
     InfoNotice,
     CardsSlider,
+    AnchorGrid,
   },
   data() {
     return {
       cards: Cards,
+      links: Links,
     };
   },
 };

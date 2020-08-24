@@ -22,7 +22,8 @@ a.animated-anchor {
       transition: all 0.2s ease;
     }
   }
-  &.active,
+  &:not(.no-active).active::before,
+  &:not(.no-active).router-link-exact-active::before,
   &:hover::before,
   &:active::before,
   &:focus::before {

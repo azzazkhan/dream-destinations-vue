@@ -22,6 +22,7 @@ import "./assets/scss/style.scss";
 // Importing JavaScript
 import "bootstrap";
 import "owl.carousel/src/js/owl.carousel";
+import "./assets/js/toggleModal";
 
 Vue.config.productionTip = false;
 

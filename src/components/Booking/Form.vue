@@ -1,7 +1,7 @@
 <template>
   <form
     action="#"
-    class="booking-form d-lg-flex justify-content-between"
+    class="BookingFormComponent booking-form d-lg-flex justify-content-between"
     method="GET"
     @submit.prevent
   >
@@ -107,31 +107,9 @@
         </span>
         <input type="text" class="trigger-selection" name="departure" placeholder="Depart" readonly />
       </div>
-      <div class="selection-box d-none">
-        <div class="header">
-          <span class="close-icon dismiss-selection">
-            <svg
-              focusable="false"
-              data-id="SVG_CLOSE__16"
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M12.5 12.5l-9-9m9 0l-9 9"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </span>
-        </div>
-        <div class="selection-content">
-          <div class="date-picker-wrapper">Calendar goes here</div>
-          <button class="custom-btn blue continue dismiss-selection">Continue</button>
-        </div>
-      </div>
+      <BookingPopup :dismiss-button="true" title="Pick a date range">
+        <p class="text-center text-muted py-5">Calendar goes here</p>
+      </BookingPopup>
     </div>
     <div class="field-wrapper has-selection-box guests">
       <span class="icon">

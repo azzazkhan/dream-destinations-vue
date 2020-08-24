@@ -9,6 +9,9 @@
   border: 1px solid #cccccd;
   border-left: 4px solid get-color(primary);
   border-radius: 4px;
+  @include breakpoint(lg) {
+    width: 95%;
+  }
   .icon {
     position: absolute;
     left: 20px;

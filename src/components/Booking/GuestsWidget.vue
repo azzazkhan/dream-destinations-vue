@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-lg-4 px-lg-2">
+  <div class="BookingGuestsWidgetComponent pt-lg-4 px-lg-2">
     <BookingGuestsWidgetCounter
       :data="{
       count: adults,

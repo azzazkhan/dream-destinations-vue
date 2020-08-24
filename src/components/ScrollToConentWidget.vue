@@ -1,5 +1,5 @@
 <template>
-  <a href="javascript:void(0)" :class="{'invert': invert}"></a>
+  <a href="javascript:void(0)" class="ScrollToContentWidgetComponent" :class="{'invert': invert}"></a>
 </template>
 
 <script>

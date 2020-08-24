@@ -1,0 +1,36 @@
+@import "../variables";
+@import "../mixins";
+
+ul,
+li {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+ul.links {
+  width: calc(100% - 5px);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px auto 0;
+  li {
+    flex-basis: 100%;
+    margin-bottom: 10px;
+    @include breakpoint(md) {
+      flex-basis: 50%;
+    }
+    @include breakpoint(lg) {
+      flex-basis: 25%;
+    }
+    a {
+      color: get-color(primary-light);
+      font-size: 16px;
+      font-family: get-font(input);
+      font-weight: bold;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

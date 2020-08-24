@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Lato:400,bold|Open+Sans:300,600|Lobster");
+@import url("https://fonts.googleapis.com/css?family=Lato:400,bold|Open+Sans:300,400,600|Lobster");
 @import "~bootstrap/scss/bootstrap";
 @import "~owl.carousel/src/scss/owl.carousel";
 @import "~owl.carousel/src/scss/owl.theme.default";
@@ -25,6 +25,9 @@ body {
   min-height: 100vh;
   margin: 0;
   padding: 0;
+  &.scroll-locked {
+    overflow-y: hidden !important;
+  }
 }
 
 a {
@@ -38,8 +41,37 @@ a {
   }
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+.heading-1,
+.heading-2,
+.heading-3,
+.heading-4,
+.heading-5,
+.heading-6 {
+  &.light {
+    font-weight: 300 !important;
+  }
+  font-family: get-font(heading);
+  font-weight: 600;
+}
+
+.base-heading {
+  font-family: get-font(primary);
+  font-weight: 500;
+}
+
 .featured-title {
   font-family: get-font(featured);
 }
 
-@import "./components/animatedAnchor.scss";
+@import "./components/utils/animatedAnchor";

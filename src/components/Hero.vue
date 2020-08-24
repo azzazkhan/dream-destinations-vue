@@ -1,5 +1,5 @@
 <template>
-  <section class="hero d-flex flex-column justify-content-center align-items-center">
+  <section class="HeroComponent hero d-flex flex-column justify-content-center align-items-center">
     <slot>
       <ScrollToContentWidget />
     </slot>
