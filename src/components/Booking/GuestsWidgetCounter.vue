@@ -46,6 +46,9 @@
     props: {
       data: {
         type: Object,
+        default: function() {
+          return {};
+        },
       },
     },
     data() {

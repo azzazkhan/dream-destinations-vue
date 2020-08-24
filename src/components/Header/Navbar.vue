@@ -4,8 +4,16 @@
   >
     <!-- This container will hold the logo image. Note that use of <img> tag is must even for SVGs -->
     <div class="logo-wrapper">
-      <router-link to="/" class="d-flex h-100 w-100 justify-content-center align-items-center">
-        <img src="@/assets/img/logo.svg" class="logo" alt="Image not available" />
+      <router-link
+        to="/"
+        class="d-flex h-100 w-100 justify-content-center align-items-center"
+      >
+        <img
+          src="@/assets/img/logo.png"
+          style="transform: scale(3) translate(25%, 14%)"
+          class="logo"
+          alt="Image not available"
+        />
       </router-link>
     </div>
     <!-- Animated menu icon -->
@@ -24,7 +32,11 @@
             <router-link to="/about">About Us</router-link>
           </li>
           <li class="menu-item">
-            <a href="javascript:void(0)" class="has-icon modal-trigger" data-modal="AuthModel_01">
+            <a
+              href="javascript:void(0)"
+              class="has-icon modal-trigger"
+              data-modal="AuthModel_01"
+            >
               <svg
                 focusable="false"
                 data-id="SVG_PERSON__24"
@@ -45,7 +57,11 @@
             </a>
           </li>
           <li class="menu-item">
-            <a href="javascript:void(0)" class="has-icon modal-trigger" data-modal="AuthModel_01">
+            <a
+              href="javascript:void(0)"
+              class="has-icon modal-trigger"
+              data-modal="AuthModel_01"
+            >
               <svg
                 focusable="false"
                 data-id="SVG_INVITE__24"
@@ -76,7 +92,11 @@
                 viewBox="0 0 24 24"
               >
                 <g fill="none" fill-rule="evenodd">
-                  <path fill="currentColor" stroke="none" d="M13 16.7a1 1 0 1 1-2 0 1 1 0 0 1 2 0" />
+                  <path
+                    fill="currentColor"
+                    stroke="none"
+                    d="M13 16.7a1 1 0 1 1-2 0 1 1 0 0 1 2 0"
+                  />
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
@@ -99,12 +119,12 @@
 </template>
 
 <script>
-import "@/assets/js/navbarItemCollapse.js";
-import "@/assets/js/navbarSidenav.js";
+  import "@/assets/js/navbarItemCollapse.js";
+  import "@/assets/js/navbarSidenav.js";
 
-export default {
-  name: "HeaderNavbar",
-};
+  export default {
+    name: "HeaderNavbar",
+  };
 </script>
 
 <style

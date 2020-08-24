@@ -8,22 +8,22 @@
 </template>
 
 <script>
-import "@/assets/js/animatedIcon.js";
-import "@/assets/js/toggleModal.js";
-import "@/assets/js/smoothScroll.js";
+  import "@/assets/js/animatedIcon.js";
+  import "@/assets/js/toggleModal.js";
+  import "@/assets/js/smoothScroll.js";
 
-import AuthModel from "@/components/AuthModel/Auth.vue";
-import Header from "@/components/Header/Index.vue";
-import Footer from "@/components/Footer.vue";
+  import AuthModel from "@/components/AuthModel/Auth.vue";
+  import Header from "@/components/Header/Index.vue";
+  import Footer from "@/components/Footer.vue";
 
-export default {
-  name: "App",
-  components: {
-    AuthModel,
-    Header,
-    Footer,
-  },
-};
+  export default {
+    name: "App",
+    components: {
+      AuthModel,
+      Header,
+      Footer,
+    },
+  };
 </script>
 
 <style lang="scss" src="@/assets/scss/components/animatedMenuIcon.scss"></style>

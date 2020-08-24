@@ -19,8 +19,8 @@
     <div class="logo-wrapper">
       <a href="javascript:void(0)" class="no-decoration">
         <img
-          src="@/assets/img/logo.svg"
-          style="height: 48px;"
+          src="@/assets/img/logo.png"
+          style="height: 48px; transform: scale(2.5) translateX(25%)"
           alt="Image not available"
         />
       </a>

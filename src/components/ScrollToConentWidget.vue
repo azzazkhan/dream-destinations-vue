@@ -8,15 +8,15 @@
 </template>
 
 <script>
-export default {
-  name: "ScrollToContentWidget",
-  props: {
-    invert: {
-      type: Boolean,
-      default: false,
+  export default {
+    name: "ScrollToContentWidget",
+    props: {
+      invert: {
+        type: Boolean,
+        default: false,
+      },
     },
-  },
-};
+  };
 </script>
 
 <style

@@ -1,6 +1,6 @@
 <template>
   <div class="BookingGuestsWidgetToggleComponent selection-field">
-    <div class="description" v-text="heading"></div>
+    <div class="description" v-text="title"></div>
     <div class="actions">
       <button
         class="text"
@@ -22,12 +22,19 @@
   export default {
     name: "BookingGuestsWidgetToggle",
     props: {
-      title: String,
-      data: Object,
+      title: {
+        type: String,
+        default: "Choose one",
+      },
+      data: {
+        type: Object,
+        default: function() {
+          return {};
+        },
+      },
     },
     data() {
       return {
-        heading: "Choose one",
         defaults: {
           toggled: false,
           on: "Yes",

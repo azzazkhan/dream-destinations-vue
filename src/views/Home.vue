@@ -11,17 +11,13 @@
       <InfoNotice>
         Travel safe: Be sure to follow any government safety guidelines for
         travel.
-        <a
-          href="#"
-          class="animated-anchor"
-        >Visit our help article</a>
+        <a href="#" class="animated-anchor">Visit our help article</a>
       </InfoNotice>
       <CardsSlider />
       <AnchorGrid class="mt-5" :links="links">
         <template v-slot:description>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
-          deleniti expedita unde vel recusandae fuga ratione amet error neque
-          commodi!
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio deleniti
+          expedita unde vel recusandae fuga ratione amet error neque commodi!
         </template>
       </AnchorGrid>
     </MainContentWraper>
@@ -29,29 +25,29 @@
 </template>
 
 <script>
-import Hero from "@/components/Hero.vue";
-import BookingForm from "@/components/Booking/Form";
-import MainContentWraper from "@/components/Main/ContentWrapper.vue";
-import InfoNotice from "@/components/Notice/Info.vue";
-import CardsSlider from "@/components/CardsSlider.vue";
-import AnchorGrid from "@/components/AnchorGrid.vue";
+  import Hero from "@/components/Hero.vue";
+  import BookingForm from "@/components/Booking/Form";
+  import MainContentWraper from "@/components/Main/ContentWrapper.vue";
+  import InfoNotice from "@/components/Notice/Info.vue";
+  import CardsSlider from "@/components/CardsSlider.vue";
+  import AnchorGrid from "@/components/AnchorGrid.vue";
 
-import Links from "@/data/links.json";
+  import Links from "@/data/links.json";
 
-export default {
-  name: "Home",
-  components: {
-    Hero,
-    BookingForm,
-    MainContentWraper,
-    InfoNotice,
-    CardsSlider,
-    AnchorGrid,
-  },
-  data() {
-    return {
-      links: Links,
-    };
-  },
-};
+  export default {
+    name: "Home",
+    components: {
+      Hero,
+      BookingForm,
+      MainContentWraper,
+      InfoNotice,
+      CardsSlider,
+      AnchorGrid,
+    },
+    data() {
+      return {
+        links: Links,
+      };
+    },
+  };
 </script>

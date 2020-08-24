@@ -3,7 +3,7 @@
     <div class="header d-lg-none">
       <h4 v-if="title && !input" class="title" v-text="title"></h4>
       <input
-        v-if="has_input_box"
+        v-if="has_input_box()"
         v-model="entry"
         type="text"
         class="input-capture"
@@ -64,6 +64,9 @@
       },
       input: {
         type: Object,
+        default: function() {
+          return {};
+        },
       },
       loading: {
         type: Boolean,
@@ -90,13 +93,15 @@
 
         return `${_total_guests} Guests` + _pets;
       },
-      has_input_box() {
-        return this.input && (typeof this.input).toLowerCase() == "object";
-      },
     },
     watch: {
       entry() {
         this.$emit("input-updated", this.entry);
+      },
+    },
+    methods: {
+      has_input_box() {
+        return Object.keys(this.input).length > 0;
       },
     },
   };
