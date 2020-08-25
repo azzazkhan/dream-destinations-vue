@@ -41,9 +41,7 @@
         <LocationsList :places="location_data" :full-view="true" />
       </BookingPopup>
     </div>
-    <div
-      class="field-wrapper has-selection-box date d-flex justify-content-between"
-    >
+    <div class="field-wrapper date d-flex justify-content-between">
       <div class="input-wrapper arrival">
         <span class="icon">
           <svg
@@ -88,13 +86,7 @@
             </g>
           </svg>
         </span>
-        <input
-          type="text"
-          class="trigger-selection"
-          name="arrival"
-          placeholder="Arrival"
-          readonly
-        />
+        <input type="text" name="arrival" placeholder="Arrival" />
       </div>
       <div class="input-wrapper departure">
         <span class="icon">
@@ -135,17 +127,8 @@
             </g>
           </svg>
         </span>
-        <input
-          type="text"
-          class="trigger-selection"
-          name="departure"
-          placeholder="Depart"
-          readonly
-        />
+        <input type="text" name="departure" placeholder="Depart" />
       </div>
-      <BookingPopup :dismiss-button="true" title="Pick a date range">
-        <p class="text-center text-muted py-5">Calendar goes here</p>
-      </BookingPopup>
     </div>
     <div class="field-wrapper has-selection-box guests">
       <span class="icon">
