@@ -1,10 +1,6 @@
 <template>
   <div class="CategoryView">
-    <Hero>
-      <h1 class="featured-title text-white text-center text-capitalize">
-        Dream Destinations
-      </h1>
-    </Hero>
+    <Hero />
     <MainContentWraper
       class="mx-auto bg-white h-100 pt-5"
       style="width: 90vw; border-radius: 10px; transform: translateY(-50px)"

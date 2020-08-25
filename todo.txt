@@ -1,1 +1,0 @@
-Replace (pets) with (Shaheer) in GuestsWidgets computed property and <template>.

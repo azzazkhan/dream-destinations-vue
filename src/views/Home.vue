@@ -14,11 +14,11 @@
         <a href="#" class="animated-anchor">Visit our help article</a>
       </InfoNotice>
       <CardsSlider />
-      <AnchorGrid class="mt-5" :links="links">
-        <template v-slot:description>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio deleniti
-          expedita unde vel recusandae fuga ratione amet error neque commodi!
-        </template>
+      <AnchorGrid class="mt-5" :links="links" title="More Vacation Ideas">
+        <template v-slot:description
+          >Best location choosen by our team according to user
+          reviews.</template
+        >
       </AnchorGrid>
     </MainContentWraper>
   </div>

@@ -66,7 +66,7 @@
               <a href="javascript:void(0)">Umrah</a>
             </li>
             <li class="item">
-              <a href="javascript:void(0)">About Us</a>
+              <router-link to="/about">About Us</router-link>
             </li>
           </ul>
           <ul class="links-list">
@@ -74,7 +74,7 @@
               <a href="javascript:void(0)">Contact Us</a>
             </li>
             <li class="item">
-              <a href="javascript:void(0)">FAQs</a>
+              <router-link to="/help">FAQs</router-link>
             </li>
             <li class="item">
               <a href="javascript:void(0)">Terms & Conditions</a>

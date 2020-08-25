@@ -3,7 +3,10 @@
     class="HeroComponent hero d-flex flex-column justify-content-center align-items-center"
   >
     <slot>
-      <ScrollToContentWidget />
+      <h1 class="featured-title text-white text-center text-capitalize">
+        Dream Destinations
+      </h1>
+      <ScrollToContentWidget :invert="true" />
     </slot>
   </section>
 </template>

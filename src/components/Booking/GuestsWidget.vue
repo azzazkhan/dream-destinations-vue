@@ -28,7 +28,7 @@
       :class="{ invisible: !pets }"
       style="font-size: 14px;"
     >
-      Only hotels that allow Shaheer will be shown
+      Only hotels that allow pets will be shown
     </p>
   </div>
 </template>
@@ -56,8 +56,7 @@
         if (this.adults <= 0) return;
 
         return (
-          `${this.adults + this.children} Guests` +
-          (this.pets ? ", Shaheer" : "")
+          `${this.adults + this.children} Guests` + (this.pets ? ", Pets" : "")
         );
       },
     },
