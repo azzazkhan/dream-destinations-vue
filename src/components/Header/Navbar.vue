@@ -4,8 +4,8 @@
   >
     <!-- This container will hold the logo image. Note that use of <img> tag is must even for SVGs -->
     <div class="logo-wrapper">
-      <router-link
-        to="/"
+      <a
+        href="/"
         class="d-flex h-100 w-100 justify-content-center align-items-center"
       >
         <img
@@ -14,7 +14,7 @@
           class="logo"
           alt="Image not available"
         />
-      </router-link>
+      </a>
     </div>
     <!-- Animated menu icon -->
     <div class="hamburger icon-menu animated-icon d-flex d-lg-none">
@@ -26,7 +26,7 @@
         <div class="header d-lg-none"></div>
         <ul class="navigation d-lg-block">
           <li class="menu-item">
-            <router-link to="/">Home</router-link>
+            <a href="/">Home</a>
           </li>
           <li class="menu-item">
             <router-link to="/about">About Us</router-link>

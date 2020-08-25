@@ -1,0 +1,34 @@
+[
+  {
+    "title": "Gulf Shores",
+    "image": "gulf-shores"
+  },
+  {
+    "title": "Panama City Beach",
+    "image": "panama-city-beach"
+  },
+  {
+    "title": "Myrtle Beach",
+    "image": "myrtle-beach"
+  },
+  {
+    "title": "Orange Beach",
+    "image": "orange-beach"
+  },
+  {
+    "title": "Lahaina",
+    "image": "lahaina"
+  },
+  {
+    "title": "Destin",
+    "image": "destin"
+  },
+  {
+    "title": "Kihei",
+    "image": "kihei"
+  },
+  {
+    "title": "Hilton Head Island",
+    "image": "hilton-head-island"
+  }
+]

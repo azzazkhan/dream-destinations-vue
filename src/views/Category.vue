@@ -6,7 +6,7 @@
       style="width: 90vw; border-radius: 10px; transform: translateY(-50px)"
     >
       <h1 class="light mb-5">
-        Showing all (10) available {{ $route.params.category }}
+        Showing all ({{ tiles.length }}) available {{ $route.params.category }}
       </h1>
       <div class="row">
         <CategoryCard

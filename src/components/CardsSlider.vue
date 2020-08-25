@@ -5,21 +5,28 @@
         v-for="(card, index) in cards"
         :key="index"
         class="card bg-mask bg-zoom bg-blur hard"
+        :class="wideCards ? 'wide' : ''"
       >
         <div
           class="background"
           :style="{
-            'background-image':
-              'url(\'' +
-              require(`@/assets/img/${card.category}/featured.jpg`) +
-              '\')',
+            'background-image': card.category
+              ? 'url(\'' +
+                require(`@/assets/img/${card.category}/featured.jpg`) +
+                '\')'
+              : 'url(\'' +
+                require(`@/assets/img/slides/${card.image}.jpg`) +
+                '\')',
             'background-position': card.image_position
               ? card.image_position
               : 'center',
           }"
         ></div>
         <div class="content">
-          <div v-if="card.tags" class="tags fadeable">
+          <div
+            v-if="!viewOnly && card.tags && typeof card.tags == 'array'"
+            class="tags fadeable"
+          >
             <a
               v-for="(tag, idx) in card.tags"
               :key="idx"
@@ -31,11 +38,19 @@
             class="title fadeable"
             v-text="card.title ? card.title : 'Lorem ipsum dolor set amet'"
           ></h2>
-          <a :href="`/${card.category}/all`" class="btn-explore">Explore</a>
+          <a
+            v-if="!viewOnly"
+            :href="
+              card.category ? `/${card.category}/all` : 'javascript:void(0)'
+            "
+            class="btn-explore"
+            >Explore</a
+          >
         </div>
       </div>
     </div>
     <a
+      v-if="!viewOnly"
       :href="customButton.url"
       class="custom-btn inline text-capitalize mt-4 mb-2"
     >
@@ -62,11 +77,22 @@
 
 <script>
   import "@/assets/js/cardsSlider.js";
-  import Cards from "@/data/cards.json";
 
   export default {
     name: "CardsSlider",
     props: {
+      cards: {
+        type: Array,
+        required: true,
+      },
+      wideCards: {
+        type: Boolean,
+        default: false,
+      },
+      viewOnly: {
+        type: Boolean,
+        default: false,
+      },
       customButton: {
         type: Object,
         default: function() {
@@ -76,11 +102,6 @@
           };
         },
       },
-    },
-    data() {
-      return {
-        cards: Cards,
-      };
     },
   };
 </script>

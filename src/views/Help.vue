@@ -1,6 +1,11 @@
 <template>
   <div class="HelpView">
-    <Hero>
+    <Hero
+      :style="{
+        'background-image':
+          'url(\'' + require(`@/assets/img/hero-help.jpg`) + '\')',
+      }"
+    >
       <h1 class="featured-title text-white text-center text-capitalize">
         Traveler Help
       </h1>

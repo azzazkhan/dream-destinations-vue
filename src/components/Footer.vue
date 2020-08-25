@@ -57,7 +57,7 @@
         <div class="content">
           <ul class="links-list">
             <li class="item">
-              <router-link to="/">Home</router-link>
+              <a href="/">Home</a>
             </li>
             <li class="item">
               <a href="javascript:void(0)">Tours</a>
@@ -109,7 +109,7 @@
     </div>
     <div class="copyrights">
       &copy;
-      <router-link class="no-active" to="/">Dream Destinations</router-link>
+      <a href="/" class="no-active">Dream Destinations</a>
       {{ new Date().getFullYear() }} &mdash; All rights reserved
     </div>
   </footer>

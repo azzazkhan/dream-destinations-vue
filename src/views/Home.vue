@@ -11,15 +11,22 @@
       <InfoNotice>
         Travel safe: Be sure to follow any government safety guidelines for
         travel.
-        <a href="#" class="animated-anchor">Visit our help article</a>
-      </InfoNotice>
-      <CardsSlider />
-      <AnchorGrid class="mt-5" :links="links" title="More Vacation Ideas">
-        <template v-slot:description
-          >Best location choosen by our team according to user
-          reviews.</template
+        <router-link to="/help" class="animated-anchor"
+          >Visit our help article</router-link
         >
+      </InfoNotice>
+      <CardsSlider :cards="category_cards" />
+      <AnchorGrid class="mt-5" :links="links" title="More Vacation Ideas">
+        <template v-slot:description>
+          Best location choosen by our team according to user reviews.
+        </template>
       </AnchorGrid>
+      <CardsSlider
+        class="mt-5"
+        :cards="best_places_cards"
+        :view-only="true"
+        :wide-cards="true"
+      />
     </MainContentWraper>
   </div>
 </template>
@@ -32,6 +39,8 @@
   import CardsSlider from "@/components/CardsSlider.vue";
   import AnchorGrid from "@/components/AnchorGrid.vue";
 
+  import CategoryCards from "@/data/cards_categories.json";
+  import BestPlacesCards from "@/data/cards_best_places.json";
   import Links from "@/data/links.json";
 
   export default {
@@ -46,6 +55,8 @@
     },
     data() {
       return {
+        category_cards: CategoryCards,
+        best_places_cards: BestPlacesCards,
         links: Links,
       };
     },

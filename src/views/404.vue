@@ -9,7 +9,7 @@
         The page you were looking for could not be found!
       </h1>
       <div class="d-flex justify-content-center">
-        <router-link to="/" class="custom-btn inline d-inline-block">
+        <a href="/" class="custom-btn inline d-inline-block">
           <span
             class="icon position-relative"
             style="margin-right: 5px; bottom: -9px; right: 5px; transform: rotate(180deg);"
@@ -29,7 +29,7 @@
               />
             </svg> </span
           >Back to home page
-        </router-link>
+        </a>
       </div>
     </MainContentWraper>
   </div>
