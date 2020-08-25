@@ -7,11 +7,12 @@
         class="card bg-mask bg-zoom bg-blur hard"
       >
         <div
-          v-if="card.image"
           class="background"
           :style="{
             'background-image':
-              'url(\'' + require(`@/assets/img/${card.image}`) + '\')',
+              'url(\'' +
+              require(`@/assets/img/${card.category}/featured.jpg`) +
+              '\')',
             'background-position': card.image_position
               ? card.image_position
               : 'center',
@@ -23,20 +24,14 @@
               v-for="(tag, idx) in card.tags"
               :key="idx"
               href="javascript:void(0)"
-              v-text="card.tags[index]"
+              v-text="card.tags[idx]"
             ></a>
           </div>
           <h2
             class="title fadeable"
             v-text="card.title ? card.title : 'Lorem ipsum dolor set amet'"
           ></h2>
-          <a
-            :href="
-              card.permalink ? `/${card.permalink}/all` : 'javascript:void(0)'
-            "
-            class="btn-explore"
-            >Explore</a
-          >
+          <a :href="`/${card.category}/all`" class="btn-explore">Explore</a>
         </div>
       </div>
     </div>

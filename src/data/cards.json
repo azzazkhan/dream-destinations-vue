@@ -1,45 +1,42 @@
 [
   {
+    "title": "Hotels",
+    "tags": ["30,011 Available"],
+    "category": "hotels"
+  },
+  {
+    "title": "Resorts",
+    "tags": ["25,235 Available"],
+    "category": "resorts"
+  },
+  {
     "title": "Boats",
-    "tags": ["Boat", "Ocean", "Luxury"],
-    "image": "boats/boat-in-lake-powell.jpg",
-    "image_position": "right",
-    "permalink": "boats"
+    "tags": ["10,568 Available"],
+    "category": "boats"
+  },
+  {
+    "title": "Bungalows",
+    "tags": ["52,985 Available"],
+    "category": "bungalows"
   },
   {
     "title": "Villas",
     "tags": ["Villa", "Luxury", "Vallarta"],
-    "image": "villas/vacation-rental-villas-in-puerto-vallarta.jpg",
-    "permalink": "villas"
+    "category": "villas"
   },
   {
     "title": "Yatchs",
     "tags": ["Yatch", "Luxury", "High Class"],
-    "image": "yatchs/fincantieri-yacht.jpg",
-    "permalink": "yatchs"
-  },
-  {
-    "title": "Resorts",
-    "tags": ["Lorem", "Ipsum", "Dolor"],
-    "image": "resorts/warwick-resorts.jpg",
-    "permalink": "resorts"
+    "category": "yatchs"
   },
   {
     "title": "Lodges",
     "tags": ["Lorem", "Ipsum", "Dolor"],
-    "image": "lodges/lodge-holidays-and-luxury-lodge-breaks-in-uk.jpg",
-    "permalink": "lodges"
-  },
-  {
-    "title": "Hotels",
-    "tags": ["Hotels", "Five Star", "Dolor"],
-    "image": "hotels/cairo-pyramid-hotel.jpg",
-    "permalink": "hotels"
+    "category": "lodges"
   },
   {
     "title": "Castles",
     "tags": ["Castle", "Fairytale", "Disney"],
-    "image": "castles/fairytale-castle-in-germany.jpg",
-    "permalink": "castles"
+    "category": "castles"
   }
 ]
