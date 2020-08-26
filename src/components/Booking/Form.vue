@@ -86,7 +86,14 @@
             </g>
           </svg>
         </span>
-        <input type="text" name="arrival" placeholder="Arrival" />
+        <input
+          type="date"
+          name="arrival"
+          :min="`${date.year}-${date.month}-${date.date}`"
+          :value="`${date.year}-${date.month}-${date.date}`"
+          placeholder="Arrival"
+          @keydown.prevent
+        />
       </div>
       <div class="input-wrapper departure">
         <span class="icon">
@@ -127,7 +134,15 @@
             </g>
           </svg>
         </span>
-        <input type="text" name="departure" placeholder="Depart" />
+        <input
+          type="date"
+          name="departure"
+          :min="`${date.year}-${date.month}-${date.date}`"
+          :max="`${date.year}-12-31`"
+          :value="`${date.year}-${date.month}-${date.date}`"
+          placeholder="Depart"
+          @keydown.prevent
+        />
       </div>
     </div>
     <div class="field-wrapper has-selection-box guests">
@@ -206,6 +221,17 @@
         guests: "",
         location_data: [],
         filtered_locations: [],
+        date: {
+          year: this.get_year().toString(),
+          month: (this.get_month() < 10
+            ? "0" + this.get_month()
+            : this.get_month()
+          ).toString(),
+          date: (this.get_date() < 10
+            ? "0" + this.get_date()
+            : this.get_date()
+          ).toString(),
+        },
       };
     },
     mounted() {
@@ -226,6 +252,9 @@
       update_guests(guests) {
         this.guests = guests;
       },
+      get_date: () => new Date().getDate(),
+      get_month: () => new Date().getMonth() + 1,
+      get_year: () => new Date().getFullYear(),
     },
   };
 </script>

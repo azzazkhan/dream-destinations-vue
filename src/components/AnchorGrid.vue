@@ -1,6 +1,6 @@
 <template>
   <div class="AnchorGridComponent">
-    <h2 class="title mb-2" v-text="title"></h2>
+    <h2 class="base-heading mb-2" v-text="title"></h2>
     <p class="description mt-0 text-muted">
       <slot name="description"></slot>
     </p>

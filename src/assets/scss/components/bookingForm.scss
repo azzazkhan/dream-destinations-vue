@@ -61,6 +61,20 @@
         box-shadow: 0 0 0 2px get-color(primary),
           0 3px 8px -4px rgba(0, 0, 0, 0.2);
       }
+      &[type="date"] {
+        cursor: default;
+        &::-webkit-inner-spin-button {
+          opacity: 0;
+        }
+        &::-webkit-calendar-picker-indicator {
+          position: absolute;
+          cursor: pointer;
+          left: calc((-35px / 2) - 2px);
+          opacity: 0;
+          height: 24px;
+          width: 24px;
+        }
+      }
       @include breakpoint(lg) {
         width: calc(100% - 5px);
       }
@@ -75,8 +89,13 @@
           width: 50%;
         }
         // Adjust the icon of the right field
-        &.departure .icon {
-          left: calc(50% + 2px + 5px);
+        &.departure {
+          .icon {
+            left: calc(50% + 2px + 5px);
+          }
+          input[type="date"]::-webkit-calendar-picker-indicator {
+            left: calc(50% + (-35px / 2) - 2px);
+          }
         }
       }
     }

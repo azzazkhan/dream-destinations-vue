@@ -1,7 +1,9 @@
 <template>
   <div class="HomeView">
     <Hero>
-      <h1 class="featured-title text-white text-center">Find dream vacation</h1>
+      <h1 class="featured-title text-white text-center text-capitalize">
+        Find your dream vacation
+      </h1>
       <BookingForm />
     </Hero>
     <MainContentWraper
@@ -15,12 +17,17 @@
           >Visit our help article</router-link
         >
       </InfoNotice>
+      <h2 class="base-heading mb-4 mt-5">Find spaces that suit your style</h2>
       <CardsSlider :cards="category_cards" />
       <AnchorGrid class="mt-5" :links="links" title="More Vacation Ideas">
-        <template v-slot:description>
-          Best location choosen by our team according to user reviews.
-        </template>
+        <template v-slot:description
+          >Best location choosen by our team according to user
+          reviews.</template
+        >
       </AnchorGrid>
+      <h2 class="base-heading mb-4 mt-5">
+        Best places in the world for going to the beach
+      </h2>
       <CardsSlider
         class="mt-5"
         :cards="best_places_cards"
